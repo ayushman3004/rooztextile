@@ -1,26 +1,130 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --slate-blue: #6F8FA8;
+  --slate-blue-dark: #56758D;
+  --slate-blue-light: #8BA8BF;
+  --slate-blue-muted: #E2EAF0;
+  --bg-cream: #FDFBF7;
+  --bg-sand: #F7F3EB;
+  --bg-sand-dark: #EDE7DC;
+  --charcoal-noir: #11161F;
+  --charcoal-soft: #1E2633;
+  --gold-accent: #C5A265;
+  --gold-light: #E8D3AA;
+  --crimson-accent: #7D1826;
+  --border-editorial: #E5DDD0;
+  --border-slate: #82A0B8;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg-cream);
+  color: var(--charcoal-noir);
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Editorial Brand & Display Typography */
+.font-serif-brand {
+  font-family: var(--font-serif), "Cormorant Garamond", "Didot", "Playfair Display", Georgia, serif;
+  font-style: normal;
+  letter-spacing: -0.01em;
+}
+
+.font-editorial-heading {
+  font-family: var(--font-serif), "Playfair Display", "Didot", Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+/* Bold Modern Sans Display (like Image 1: MOST WANTED AND MOST LOVED) */
+.font-display-bold {
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* Reference Underline for Category Titles (like Image 2: Dresses, Knits) */
+.editorial-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.editorial-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2.5px;
+  background-color: #FFFFFF;
+  border-radius: 1px;
+}
+
+.editorial-underline-dark::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 100%;
+  height: 2.5px;
+  background-color: #11161F;
+  border-radius: 1px;
+}
+
+/* Dusty Slate Blue Backgrounds */
+.bg-slate-editorial {
+  background-color: #6F8FA8;
+}
+
+.bg-slate-editorial-dark {
+  background-color: #56758D;
+}
+
+/* Smooth rounded corners from inspiration photos */
+.rounded-editorial-card {
+  border-radius: 2rem;
+}
+
+.rounded-editorial-pill {
+  border-radius: 9999px;
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F3EB;
+}
+::-webkit-scrollbar-thumb {
+  background: #6F8FA8;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #56758D;
+}
+
+/* Subtle fade in animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Custom focus ring */
+*:focus-visible {
+  outline: 2px solid #6F8FA8;
+  outline-offset: 2px;
 }

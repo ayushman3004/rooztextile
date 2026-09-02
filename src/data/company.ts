@@ -1,0 +1,68 @@
+export interface CompanyInfo {
+  name: string;
+  tagline: string;
+  established: number;
+  yearsOfHeritage: number;
+  phone: string;
+  displayPhone: string;
+  whatsappNumber: string;
+  email: string;
+  salesEmail: string;
+  corporateEmail: string;
+  address: {
+    street: string;
+    area: string;
+    city: string;
+    state: string;
+    pincode: string;
+    country: string;
+  };
+  stats: {
+    clientsEquipped: string;
+    monthlyProduction: string;
+    fabricVarieties: string;
+    reorderRate: string;
+  };
+  divisions: string[];
+  certifications: string[];
+}
+
+export const companyData: CompanyInfo = {
+  name: "Rooz Textile",
+  tagline: "Fine Worsted Suiting, Executive Attire & Institutional Uniforms Since 1994",
+  established: 1994,
+  yearsOfHeritage: 30,
+  phone: "+919876543210",
+  displayPhone: "+91 98765 43210",
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "919876543210",
+  email: "concierge@rooztextile.com",
+  salesEmail: "b2b@rooztextile.com",
+  corporateEmail: "corporate@rooztextile.com",
+  address: {
+    street: "Plot 42-45, Heritage Textile Park & Weaving Estate",
+    area: "Sartorial Avenue, Sector 5",
+    city: "Greater Noida & Surat",
+    state: "Uttar Pradesh & Gujarat",
+    pincode: "201306",
+    country: "India",
+  },
+  stats: {
+    clientsEquipped: "500+ Corporations & Schools",
+    monthlyProduction: "65,000+ Suiting Articles",
+    fabricVarieties: "160+ Luxury Weaves",
+    reorderRate: "98.7%",
+  },
+  divisions: [
+    "The Sartorial Atelier (Executive Blazers & Bespoke Suiting)",
+    "The Executive Shirtmaker (2-Ply Giza & Oxford Cotton)",
+    "Institutional & Academy Division (School Attire & Crested Uniforms)",
+    "Private Label & Corporate Contracts (Aviation, Luxury Hospitality & Corporate Wear)",
+  ],
+  certifications: [
+    "Woolmark Certified Australian Merino Blends",
+    "ISO 9001:2015 Quality Management Certified",
+    "OEKO-TEX® Standard 100 Non-Toxic Dyes",
+    "AATCC Grade 4.5+ Colorfastness & Tensile Durability",
+    "Sedex SMETA Audited Fair-Wage Mill",
+  ],
+};
