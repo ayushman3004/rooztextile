@@ -34,7 +34,7 @@ export const companyData: CompanyInfo = {
   yearsOfHeritage: 30,
   phone: "+918900300307",
   displayPhone: "+91 89003 00307",
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "918900300307",
+  whatsappNumber: process.env.WHATSAPP_NUMBER || process.env.NEXT_PUBLIC_WHATSAPP_NUMBER || "918900300307",
   email: "concierge@rooztextile.com",
   salesEmail: "b2b@rooztextile.com",
   corporateEmail: "corporate@rooztextile.com",
