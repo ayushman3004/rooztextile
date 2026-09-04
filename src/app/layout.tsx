@@ -71,10 +71,12 @@ export default function RootLayout({
     url: "https://rooztextile.com",
     logo: "https://rooztextile.com/images/rooz-logo.png",
     telephone: companyData.phone,
+    taxID: companyData.gstNumber,
     address: {
       "@type": "PostalAddress",
-      streetAddress: companyData.address.street,
+      streetAddress: `${companyData.address.street}, ${companyData.address.area}`,
       addressLocality: companyData.address.city,
+      addressRegion: companyData.address.state,
       postalCode: companyData.address.pincode,
       addressCountry: companyData.address.country,
     },

@@ -9,6 +9,7 @@ export interface CompanyInfo {
   email: string;
   salesEmail: string;
   corporateEmail: string;
+  gstNumber: string;
   address: {
     street: string;
     area: string;
@@ -38,12 +39,13 @@ export const companyData: CompanyInfo = {
   email: "concierge@rooztextile.com",
   salesEmail: "b2b@rooztextile.com",
   corporateEmail: "corporate@rooztextile.com",
+  gstNumber: "19FXSPR5726Q1Z1",
   address: {
-    street: "Plot 42-45, Heritage Textile Park & Weaving Estate",
-    area: "Sartorial Avenue, Sector 5",
-    city: "Greater Noida & Surat",
-    state: "Uttar Pradesh & Gujarat",
-    pincode: "201306",
+    street: "Bajeprotappur, Subjalapul",
+    area: "Beside Hanuman Mandir",
+    city: "Burdwan",
+    state: "West Bengal",
+    pincode: "713101",
     country: "India",
   },
   stats: {

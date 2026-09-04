@@ -111,14 +111,18 @@ export default function Footer() {
           {/* Column 3: Mill Locations */}
           <div className="space-y-3">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8BA8BF] block">
-              LOCATION
+              ATELIER & MILL
             </span>
-            <p className="font-light text-neutral-300 leading-relaxed">
-              Plot 42–45, Textile Park Avenue<br />
-              Greater Noida & Surat Mills<br />
+            <p className="font-light text-neutral-300 leading-relaxed text-xs">
+              {companyData.address.street}<br />
+              {companyData.address.area}<br />
+              {companyData.address.city}, {companyData.address.state}<br />
               India
             </p>
-            <p className="font-light text-neutral-400">
+            <p className="font-light text-neutral-300 text-xs">
+              <span className="text-[#8BA8BF] font-semibold">GSTIN:</span> {companyData.gstNumber}
+            </p>
+            <p className="font-light text-neutral-400 text-xs">
               Tel: {companyData.displayPhone}
             </p>
           </div>

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { productsData, Product } from "@/data/products";
+import { companyData } from "@/data/company";
 import { getSampleKitUrl, getWhatsAppUrl } from "@/lib/whatsapp";
 import ProductModal from "@/components/ProductModal";
 import QuoteBuilderModal from "@/components/QuoteBuilderModal";
@@ -210,13 +211,16 @@ export default function HomePage() {
               {/* Location Block */}
               <div className="space-y-1">
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-white/70 block">
-                  LOCATION
+                  ATELIER & MILL LOCATION
                 </span>
-                <h3 className="font-display-bold text-2xl sm:text-3xl md:text-4xl tracking-tight leading-tight text-white">
-                  PLOT 42-45, TEXTILE AVENUE<br />
-                  GREATER NOIDA & SURAT<br />
-                  INDIA
+                <h3 className="font-display-bold text-xl sm:text-2xl md:text-3xl tracking-tight leading-snug text-white uppercase">
+                  BAJEPROTAPPUR, SUBJALAPUL<br />
+                  BESIDE HANUMAN MANDIR<br />
+                  BURDWAN, WEST BENGAL
                 </h3>
+                <p className="text-xs text-white/80 tracking-wider pt-1 font-mono">
+                  GSTIN: {companyData.gstNumber}
+                </p>
               </div>
 
               {/* Social / Direct Connect */}
