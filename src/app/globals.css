@@ -166,3 +166,33 @@ body {
   outline-offset: 2px;
 }
 
+/* WhatsApp Blinking & Pulsating Green Glow Effect */
+@keyframes wpPulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  60% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+@-webkit-keyframes wpPulseGlow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  60% {
+    box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.animate-wp-pulse {
+  animation: wpPulseGlow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+  -webkit-animation: wpPulseGlow 2s infinite cubic-bezier(0.4, 0, 0.6, 1);
+}
+

@@ -168,7 +168,9 @@ export default function Header() {
               message="Hello Rooz Textile Concierge, I would like to inquire regarding school uniform supply."
               label="Inquire"
               size="sm"
-              className="rounded-full bg-[#11161F] text-white hover:bg-[#6F8FA8] border-none px-4 py-2 text-[11px] uppercase tracking-wider"
+              variant="secondary"
+              pulse={true}
+              className="px-4 py-2 text-[11px] uppercase tracking-wider font-bold shadow-md"
             />
           </div>
 
@@ -178,7 +180,9 @@ export default function Header() {
               message="Hello Rooz Textile, I would like to discuss school uniforms."
               label="WhatsApp"
               size="sm"
-              className="rounded-full bg-[#11161F] text-white text-[10px] px-3 py-1.5"
+              variant="secondary"
+              pulse={true}
+              className="text-[10px] px-3 py-1.5 font-bold shadow-sm"
             />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -262,7 +266,9 @@ export default function Header() {
             <WhatsAppButton
               message="Hello Rooz Textile Concierge, I would like to inquire regarding wholesale manufacturing."
               label="WhatsApp Concierge"
-              className="w-full text-center rounded-full bg-[#11161F] text-white py-3 text-xs uppercase tracking-wider"
+              variant="secondary"
+              pulse={true}
+              className="w-full text-center py-3 text-xs uppercase tracking-wider font-bold shadow-md"
             />
           </div>
         </div>

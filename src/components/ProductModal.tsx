@@ -213,8 +213,12 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
               href={getProductInquiryUrl(product)}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#11161F] text-white text-xs font-semibold hover:bg-[#6F8FA8] transition shadow-md text-center uppercase tracking-wider"
+              className="relative flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#25D366] text-white text-xs font-semibold hover:bg-[#1EBE5D] transition shadow-md text-center uppercase tracking-wider animate-wp-pulse"
             >
+              <span className="relative flex h-2 w-2 shrink-0">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-85" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+              </span>
               <span>WhatsApp Wholesale Inquiry</span>
               <span>→</span>
             </a>
