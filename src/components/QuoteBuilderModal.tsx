@@ -45,7 +45,7 @@ export default function QuoteBuilderModal({ isOpen, onClose }: QuoteBuilderModal
             <span className="text-[10px] uppercase font-bold tracking-widest text-[#6F8FA8]">
               Wholesale & Corporate Procurement
             </span>
-            <h2 className="editorial-underline-dark font-editorial-heading text-2xl sm:text-3xl font-normal text-[#11161F] mt-1">
+            <h2 className="font-editorial-heading text-2xl sm:text-3xl font-normal text-[#11161F] mt-1">
               Request Wholesale Quotation
             </h2>
             <p className="text-xs text-neutral-500 mt-2 font-light">

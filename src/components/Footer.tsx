@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { companyData } from "@/data/company";
-import WhatsAppButton from "./WhatsAppButton";
+import { getWhatsAppUrl } from "@/lib/whatsapp";
 
 export default function Footer() {
   return (
@@ -14,17 +14,22 @@ export default function Footer() {
               rooz textile
             </span>
             <p className="text-xs text-neutral-400 font-light max-w-md">
-              Makers of fine worsted suiting, 2-ply Egyptian Giza cotton shirts, and institutional academy apparel since 1994.
+              Premier institutional manufacturer of Raymond-grade poly-wool blazers, crisp Oxford shirts, permanent pleated skirts, and academy uniforms since 1994.
             </p>
           </div>
 
           <div className="flex flex-wrap items-center gap-3">
-            <WhatsAppButton
-              message="Hello Rooz Textile, I would like to inquire about wholesale collections and bespoke orders."
-              label="WhatsApp Concierge"
-              size="sm"
-              className="rounded-full bg-white text-[#11161F] hover:bg-[#6F8FA8] hover:text-white border-none text-xs uppercase tracking-wider font-semibold"
-            />
+            <a
+              href={getWhatsAppUrl("Hello Rooz Textile, I would like to inquire about school uniform supply and sample swatches.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-white text-[#11161F] hover:bg-[#FAF7F0] text-xs uppercase tracking-wider font-semibold transition shadow-sm"
+            >
+              <svg className="w-4 h-4 fill-[#25D366]" viewBox="0 0 24 24">
+                <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.187-2.59-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.299.144.347.491 1.2.534 1.287.043.087.072.188.014.303-.058.116-.087.188-.173.289l-.26.303c-.087.086-.177.18-.076.354.101.173.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.274.072.375-.044.102-.115.433-.505.549-.679.116-.173.231-.144.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824zm-3.392-10.416c-4.283 0-7.766 3.483-7.766 7.766 0 1.37.356 2.656.974 3.774l-1.034 3.778 3.865-1.014c1.077.587 2.316.924 3.636.924 4.283 0 7.766-3.483 7.766-7.766 0-4.283-3.483-7.766-7.766-7.766zm0 14.075c-1.157 0-2.287-.311-3.271-.9l-.234-.139-2.431.637.649-2.37-.153-.244c-.646-1.026-.987-2.213-.987-3.43 0-3.479 2.831-6.31 6.31-6.31s6.31 2.831 6.31 6.31-2.831 6.31-6.31 6.31z" />
+              </svg>
+              <span>WhatsApp Concierge</span>
+            </a>
             <Link
               href="/contact"
               className="px-6 py-2.5 rounded-full border border-white/40 hover:border-white text-xs text-white uppercase tracking-wider font-semibold transition"
@@ -39,27 +44,27 @@ export default function Footer() {
           {/* Column 1: Collections */}
           <div className="space-y-3">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8BA8BF] block">
-              COLLECTIONS
+              SCHOOL UNIFORMS
             </span>
             <ul className="space-y-2 font-light text-neutral-300">
-              <li>
-                <Link href="/products?category=executive-blazers" className="hover:text-white transition">
-                  Executive Worsted Blazers
-                </Link>
-              </li>
-              <li>
-                <Link href="/products?category=luxury-shirts" className="hover:text-white transition">
-                  2-Ply Egyptian Giza Shirts
-                </Link>
-              </li>
               <li>
                 <Link href="/products?category=school-blazers" className="hover:text-white transition">
                   Poly-Wool School Blazers
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=school-uniforms" className="hover:text-white transition">
+                <Link href="/products?category=school-shirts" className="hover:text-white transition">
+                  Pinpoint Oxford Shirts
+                </Link>
+              </li>
+              <li>
+                <Link href="/products?category=school-skirts" className="hover:text-white transition">
                   Permanent Pleated Skirts
+                </Link>
+              </li>
+              <li>
+                <Link href="/products?category=school-skirts" className="hover:text-white transition">
+                  Tartan Pinafores & Tunics
                 </Link>
               </li>
               <li>

@@ -9,8 +9,8 @@ export default function AboutPage() {
       <section className="relative w-full min-h-[50vh] sm:min-h-[58vh] flex items-center justify-center overflow-hidden bg-[#11161F] text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-editorial.jpg"
-            alt="The Rooz Textile Atelier"
+            src="/images/school-hero.jpg"
+            alt="The Rooz Textile School Uniform Atelier"
             fill
             priority
             className="object-cover object-center filter brightness-[0.72]"
@@ -26,7 +26,7 @@ export default function AboutPage() {
             SOUL, SUBSTANCE & SARTORIAL ART
           </h1>
           <p className="text-sm sm:text-base text-neutral-200 max-w-xl mx-auto font-light leading-relaxed">
-            Three decades of bespoke suiting, fine shirting, and institutional uniform manufacturing excellence since 1994.
+            Three decades of bespoke school blazers, fine shirting, and institutional academy uniform excellence since 1994.
           </p>
         </div>
       </section>
@@ -90,8 +90,8 @@ export default function AboutPage() {
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden bg-[#56758D] shadow-2xl">
                 <Image
-                  src="/images/model-denim-portrait.jpg"
-                  alt="Rooz Textile Craftsmanship"
+                  src="/images/boys-uniform.jpg"
+                  alt="Rooz Textile School Uniform Craftsmanship"
                   fill
                   className="object-cover object-top"
                 />
@@ -114,11 +114,11 @@ export default function AboutPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 sm:p-10 bg-white rounded-[2.5rem] border border-[#E5DDD0] space-y-3 shadow-sm hover:shadow-md transition">
+            <div className="relative p-8 sm:p-10 bg-white rounded-[2.5rem] border border-[#E5DDD0] space-y-3 shadow-sm hover:shadow-md transition">
               <span className="text-xs uppercase tracking-[0.2em] text-[#6F8FA8] font-semibold block">
                 01 • LOOM WEAVING
               </span>
-              <h3 className="editorial-underline-dark text-2xl font-light text-[#11161F]">
+              <h3 className="text-2xl font-light text-[#11161F]">
                 Precision Rapier Weaving
               </h3>
               <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed pt-2">
@@ -126,11 +126,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-8 sm:p-10 bg-white rounded-[2.5rem] border border-[#E5DDD0] space-y-3 shadow-sm hover:shadow-md transition">
+            <div className="relative p-8 sm:p-10 bg-white rounded-[2.5rem] border border-[#E5DDD0] space-y-3 shadow-sm hover:shadow-md transition">
               <span className="text-xs uppercase tracking-[0.2em] text-[#6F8FA8] font-semibold block">
                 02 • PATTERN CUTTING
               </span>
-              <h3 className="editorial-underline-dark text-2xl font-light text-[#11161F]">
+              <h3 className="text-2xl font-light text-[#11161F]">
                 Automated Vacuum CAD
               </h3>
               <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed pt-2">
@@ -138,11 +138,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-8 sm:p-10 bg-white rounded-[2.5rem] border border-[#E5DDD0] space-y-3 shadow-sm hover:shadow-md transition">
+            <div className="relative p-8 sm:p-10 bg-white rounded-[2.5rem] border border-[#E5DDD0] space-y-3 shadow-sm hover:shadow-md transition">
               <span className="text-xs uppercase tracking-[0.2em] text-[#6F8FA8] font-semibold block">
                 03 • CONSTRUCTION
               </span>
-              <h3 className="editorial-underline-dark text-2xl font-light text-[#11161F]">
+              <h3 className="text-2xl font-light text-[#11161F]">
                 Floating Half-Canvas
               </h3>
               <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed pt-2">
@@ -150,11 +150,11 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="p-8 sm:p-10 bg-white rounded-[2.5rem] border border-[#E5DDD0] space-y-3 shadow-sm hover:shadow-md transition">
+            <div className="relative p-8 sm:p-10 bg-white rounded-[2.5rem] border border-[#E5DDD0] space-y-3 shadow-sm hover:shadow-md transition">
               <span className="text-xs uppercase tracking-[0.2em] text-[#6F8FA8] font-semibold block">
                 04 • QUALITY CONTROL
               </span>
-              <h3 className="editorial-underline-dark text-2xl font-light text-[#11161F]">
+              <h3 className="text-2xl font-light text-[#11161F]">
                 5-Stage Rigorous QC
               </h3>
               <p className="text-xs sm:text-sm text-neutral-600 font-light leading-relaxed pt-2">
@@ -169,8 +169,8 @@ export default function AboutPage() {
       <section className="relative w-full py-24 sm:py-32 bg-[#11161F] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/store-rail.jpg"
-            alt="Private Showroom Consultation"
+            src="/images/girls-uniform.jpg"
+            alt="School Uniform Consultation"
             fill
             className="object-cover object-center filter brightness-[0.7]"
           />

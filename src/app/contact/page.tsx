@@ -97,11 +97,11 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right Column: Large Rounded Fashion Portrait */}
+            {/* Right Column: Large Rounded School Uniform Portrait */}
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] rounded-[3rem] overflow-hidden bg-[#56758D] shadow-2xl">
                 <Image
-                  src="/images/model-denim-portrait.jpg"
+                  src="/images/boys-uniform.jpg"
                   alt="Rooz Textile Concierge Desk"
                   fill
                   className="object-cover object-top"

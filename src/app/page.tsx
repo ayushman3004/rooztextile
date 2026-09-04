@@ -12,10 +12,10 @@ export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
-  const blazersProduct = productsData.find((p) => p.id === "exec-super130-merino-blazer") || productsData[0];
-  const shirtsProduct = productsData.find((p) => p.id === "exec-egyptian-giza-shirt") || productsData[2];
-  const skirtsProduct = productsData.find((p) => p.id === "skirt-knife-pleat") || productsData[5];
-  const academyBlazer = productsData.find((p) => p.id === "blazer-polywool-classic") || productsData[4];
+  const blazersProduct = productsData.find((p) => p.id === "blazer-polywool-classic") || productsData[0];
+  const shirtsProduct = productsData.find((p) => p.id === "boys-uniform-full-set") || productsData[0];
+  const skirtsProduct = productsData.find((p) => p.id === "skirt-knife-pleat") || productsData[6];
+  const academyBlazer = productsData.find((p) => p.id === "blazer-crested-notch") || productsData[4];
 
   return (
     <main className="w-full bg-[#FDFBF7] text-[#11161F]">
@@ -23,11 +23,11 @@ export default function HomePage() {
       {/* 1. HERO SECTION (Inspired directly by Image 1 & 5)                        */}
       {/* ========================================================================= */}
       <section className="relative w-full min-h-[85vh] sm:min-h-[92vh] flex items-center justify-center overflow-hidden bg-[#11161F] text-white">
-        {/* Full-bleed background fashion photography */}
+        {/* Full-bleed background school uniform photography */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-editorial.jpg"
-            alt="Rooz Textile Contemporary Collection"
+            src="/images/school-hero.jpg"
+            alt="Rooz Textile School Uniforms & Institutional Apparel"
             fill
             priority
             className="object-cover object-center filter brightness-[0.78]"
@@ -48,7 +48,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-neutral-200 max-w-xl mx-auto font-light leading-relaxed drop-shadow-sm pt-1">
-            Bespoke suiting, fine Egyptian shirting, contemporary knits, and institutional academy apparel since 1994.
+            Premium school blazers, crisp uniform shirts, knife-pleated skirts, and institutional academy apparel since 1994.
           </p>
 
           {/* White Pill Button: Shop New Arrivals / Explore Collections (Image 1 style) */}
@@ -64,7 +64,7 @@ export default function HomePage() {
               onClick={() => setIsQuoteModalOpen(true)}
               className="inline-flex items-center justify-center px-8 py-3.5 bg-black/40 hover:bg-black/60 text-white border border-white/40 hover:border-white text-xs sm:text-sm font-medium tracking-wide rounded-full backdrop-blur-xs transition"
             >
-              Wholesale & Bespoke Orders
+              Wholesale & School Orders
             </button>
           </div>
         </div>
@@ -81,20 +81,20 @@ export default function HomePage() {
               Featured Collections
             </span>
             <h2 className="font-editorial-heading text-3xl sm:text-4xl text-white font-normal">
-              Tailored For Every Occasion
+              Tailored For Every Institution
             </h2>
           </div>
 
           {/* 4 Large Rounded Category Cards (Image 2 style with large rounded corners and underlined titles) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            {/* Card 1: Dresses & Skirts */}
+            {/* Card 1: Dresses, Skirts & Pinafores */}
             <div
               onClick={() => setSelectedProduct(skirtsProduct)}
               className="group relative aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden bg-[#56758D] cursor-pointer shadow-xl transition-transform duration-500 hover:-translate-y-1"
             >
               <Image
-                src="/images/card-dresses.jpg"
-                alt="Shop Dresses & Skirts"
+                src="/images/skirts.jpg"
+                alt="Shop School Skirts & Pinafores"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
@@ -105,7 +105,7 @@ export default function HomePage() {
                   SHOP
                 </span>
                 <h3 className="editorial-underline text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white">
-                  Dresses
+                  Skirts & Tunics
                 </h3>
                 <p className="text-xs text-white/80 mt-4 max-w-xs font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   Permanent knife-pleated skirts, academic pinafores & woven tunics
@@ -113,14 +113,14 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Card 2: Knits & Woolens */}
+            {/* Card 2: Knitwear & Cardigans */}
             <div
               onClick={() => setSelectedProduct(blazersProduct)}
               className="group relative aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden bg-[#56758D] cursor-pointer shadow-xl transition-transform duration-500 hover:-translate-y-1"
             >
               <Image
-                src="/images/card-knits.jpg"
-                alt="Shop Knits & Suiting"
+                src="/images/girls-uniform.jpg"
+                alt="Shop School Knitwear & Cardigans"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
               />
@@ -131,22 +131,22 @@ export default function HomePage() {
                   SHOP
                 </span>
                 <h3 className="editorial-underline text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white">
-                  Knits
+                  Knitwear
                 </h3>
                 <p className="text-xs text-white/80 mt-4 max-w-xs font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Super 130s Merino worsted wools, tactile cashmeres & suiting layers
+                  School uniform cardigans, v-neck pullovers & tactile winter layers
                 </p>
               </div>
             </div>
 
-            {/* Card 3: Tailored Blazers */}
+            {/* Card 3: Crested Blazers */}
             <div
               onClick={() => setSelectedProduct(academyBlazer)}
               className="group relative aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden bg-[#56758D] cursor-pointer shadow-xl transition-transform duration-500 hover:-translate-y-1"
             >
               <Image
                 src="/images/blazers.jpg"
-                alt="Shop Tailored Blazers"
+                alt="Shop School Blazers"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105 filter brightness-95"
               />
@@ -160,19 +160,19 @@ export default function HomePage() {
                   Blazers
                 </h3>
                 <p className="text-xs text-white/80 mt-4 max-w-xs font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Single-breasted worsted wool & Raymond-grade school crested blazers
+                  Single-breasted worsted poly-wool & school crested blazers
                 </p>
               </div>
             </div>
 
-            {/* Card 4: Executive & Everyday Shirts */}
+            {/* Card 4: Uniform Shirts & Ties */}
             <div
               onClick={() => setSelectedProduct(shirtsProduct)}
               className="group relative aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden bg-[#56758D] cursor-pointer shadow-xl transition-transform duration-500 hover:-translate-y-1"
             >
               <Image
-                src="/images/shirts.jpg"
-                alt="Shop Shirts"
+                src="/images/boys-uniform.jpg"
+                alt="Shop School Shirts & Ties"
                 fill
                 className="object-cover object-center transition-transform duration-700 group-hover:scale-105 filter brightness-95"
               />
@@ -183,10 +183,10 @@ export default function HomePage() {
                   SHOP
                 </span>
                 <h3 className="editorial-underline text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white">
-                  Shirts
+                  Shirts & Ties
                 </h3>
                 <p className="text-xs text-white/80 mt-4 max-w-xs font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  2-Ply Egyptian Giza cottons & breathable pinpoint Oxford weaves
+                  Crisp pinpoint Oxford shirts, regimental ties & daily assembly sets
                 </p>
               </div>
             </div>
@@ -268,12 +268,12 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Large Rounded Fashion Portrait (Image 3 style) */}
+            {/* Right Column: Large Rounded School Uniform Portrait */}
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] rounded-[3rem] overflow-hidden bg-[#56758D] shadow-2xl">
                 <Image
-                  src="/images/model-denim-portrait.jpg"
-                  alt="Rooz Textile Outerwear & Suiting"
+                  src="/images/boys-uniform.jpg"
+                  alt="Rooz Textile School Uniform Standards"
                   fill
                   className="object-cover object-top"
                 />
@@ -293,8 +293,8 @@ export default function HomePage() {
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden bg-[#EDE7DC] shadow-xl">
                 <Image
-                  src="/images/community-model.jpg"
-                  alt="Our Raving Community"
+                  src="/images/girls-uniform.jpg"
+                  alt="Our School Partner Community"
                   fill
                   className="object-cover object-center"
                 />
@@ -313,28 +313,37 @@ export default function HomePage() {
             <div className="lg:col-span-6 space-y-10 py-4">
               <div className="space-y-2">
                 <h3 className="font-editorial-heading text-xl sm:text-2xl font-bold text-[#11161F]">
-                  Aarav, Corporate Director
+                  Dr. Alistair Henderson, Procurement Head
                 </h3>
+                <p className="text-xs uppercase tracking-wider text-[#6F8FA8] font-semibold">
+                  St. Xavier&apos;s Heritage Academy (2,400+ Students)
+                </p>
                 <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed">
-                  &ldquo;Rooz Textile tailored our corporate executive blazers with remarkable precision. The Super 130s Merino wool drape is world-class and holds its shape through transcontinental business travel.&rdquo;
+                  &ldquo;Rooz Textile has supplied our entire secondary school body with winter poly-wool blazers and summer Oxford shirts for 8 consecutive sessions. The dye consistency across annual reorders and reinforced stitching save our parents considerable money.&rdquo;
                 </p>
               </div>
 
               <div className="space-y-2 border-t border-[#E5DDD0] pt-8">
                 <h3 className="font-editorial-heading text-xl sm:text-2xl font-bold text-[#11161F]">
-                  Dr. Alistair, Academy Head
+                  Sister Mary Margaret, Principal & Trustee
                 </h3>
+                <p className="text-xs uppercase tracking-wider text-[#6F8FA8] font-semibold">
+                  Convent of Jesus & Mary High School (1,800+ Students)
+                </p>
                 <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed">
-                  &ldquo;We have ordered over 2,400 school blazers and shirts every term for 8 years. The fabric consistency, reinforced stitching, and rapid WhatsApp turnaround are extraordinary.&rdquo;
+                  &ldquo;Managing uniforms across 4 house factions was a logistics challenge until we partnered with Rooz Textile. Their permanent knife-pleated skirts genuinely hold up to industrial machine washes without losing their sharpness.&rdquo;
                 </p>
               </div>
 
               <div className="space-y-2 border-t border-[#E5DDD0] pt-8">
                 <h3 className="font-editorial-heading text-xl sm:text-2xl font-bold text-[#11161F]">
-                  Jasmine, Boutique Curator
+                  Col. Rajeshwardeep Singh (Retd.), Bursar
                 </h3>
+                <p className="text-xs uppercase tracking-wider text-[#6F8FA8] font-semibold">
+                  The Lawrence Valley Boarding School (3,200+ Students)
+                </p>
                 <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed">
-                  &ldquo;Their 2-ply Egyptian Giza cotton shirts and custom blazers transformed our boutique line. High-fashion finishing paired with reliable direct mill minimums.&rdquo;
+                  &ldquo;What sets Rooz apart is their Raymond-level textile pedigree. When we needed bespoke house tartan pinafores and heavy crested blazers, they delivered strike-offs in days and completed our 3,500-piece tender on time.&rdquo;
                 </p>
               </div>
             </div>
@@ -348,7 +357,7 @@ export default function HomePage() {
       <section className="relative w-full py-28 sm:py-36 bg-[#11161F] text-white overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/store-rail.jpg"
+            src="/images/school-hero.jpg"
             alt="Craft, Curate, and Elevate"
             fill
             className="object-cover object-center filter brightness-[0.7]"
@@ -366,7 +375,7 @@ export default function HomePage() {
           </h2>
 
           <p className="text-sm sm:text-base text-neutral-200 max-w-lg mx-auto font-light leading-relaxed">
-            Partner with our weaving mills for bespoke corporate suiting, contemporary menswear, or institutional uniform tenders.
+            Partner with our weaving mills for bespoke school blazers, institutional student apparel, or annual academy uniform tenders.
           </p>
 
           <div className="pt-2">
@@ -374,7 +383,7 @@ export default function HomePage() {
               onClick={() => setIsQuoteModalOpen(true)}
               className="inline-flex items-center justify-center px-8 py-3.5 bg-[#DFF7C8] hover:bg-[#D0F0B3] text-[#11161F] font-semibold text-xs sm:text-sm tracking-wide rounded-full shadow-lg transition uppercase"
             >
-              Request Wholesale Catalog
+              Request School Catalog
             </button>
           </div>
         </div>

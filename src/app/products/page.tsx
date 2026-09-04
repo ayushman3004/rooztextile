@@ -26,15 +26,15 @@ function ProductsContent() {
 
   const filtered = productsData.filter((p) => {
     let matchesCategory = true;
-    if (activeCategory === "executive-blazers") {
-      matchesCategory = p.division === "executive" && p.category === "blazers";
-    } else if (activeCategory === "luxury-shirts") {
-      matchesCategory = p.division === "executive" && p.category === "shirts";
-    } else if (activeCategory === "school-blazers") {
-      matchesCategory = p.division === "institutional" && p.category === "blazers";
-    } else if (activeCategory === "school-uniforms") {
-      matchesCategory = p.division === "institutional" && (p.category === "skirts" || p.category === "shirts");
-    } else if (activeCategory === "accessories") {
+    if (activeCategory === "school-blazers" || activeCategory === "blazers" || activeCategory === "executive-blazers") {
+      matchesCategory = p.category === "blazers";
+    } else if (activeCategory === "school-shirts" || activeCategory === "shirts" || activeCategory === "luxury-shirts") {
+      matchesCategory = p.category === "shirts";
+    } else if (activeCategory === "school-skirts" || activeCategory === "skirts" || activeCategory === "school-uniforms") {
+      matchesCategory = p.category === "skirts";
+    } else if (activeCategory === "school-knitwear" || activeCategory === "knitwear") {
+      matchesCategory = p.id.includes("knit") || p.id.includes("cardigan");
+    } else if (activeCategory === "accessories" || activeCategory === "ties") {
       matchesCategory = p.category === "accessories";
     }
 
@@ -52,8 +52,8 @@ function ProductsContent() {
       <section className="relative w-full min-h-[50vh] sm:min-h-[58vh] flex items-center justify-center overflow-hidden bg-[#11161F] text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-editorial.jpg"
-            alt="The Sartorial Lookbook"
+            src="/images/school-hero.jpg"
+            alt="The School Uniform Lookbook"
             fill
             priority
             className="object-cover object-center filter brightness-[0.72]"
@@ -66,10 +66,10 @@ function ProductsContent() {
             rooz textile
           </span>
           <h1 className="font-display-bold text-4xl sm:text-6xl md:text-7xl tracking-tight text-white leading-none drop-shadow-md">
-            THE SARTORIAL ARCHIVE
+            THE SCHOOL UNIFORM ARCHIVE
           </h1>
           <p className="text-sm sm:text-base text-neutral-200 max-w-xl mx-auto font-light leading-relaxed">
-            Curated executive worsted wool blazers, 2-ply Egyptian Giza cotton shirts, permanent pleated skirts, and institutional academy apparel.
+            Raymond-grade poly-wool blazers, crisp pinpoint Oxford shirts, permanent knife-pleated skirts, and bespoke crested ties for prestigious academies.
           </p>
         </div>
       </section>
@@ -181,8 +181,8 @@ function ProductsContent() {
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/3] rounded-[2.5rem] overflow-hidden bg-[#56758D] shadow-2xl">
                 <Image
-                  src="/images/model-denim-portrait.jpg"
-                  alt="Bespoke Tailoring"
+                  src="/images/boys-uniform.jpg"
+                  alt="Institutional Tailoring"
                   fill
                   className="object-cover object-top"
                 />

@@ -10,21 +10,77 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full bg-[#FDFBF7]/90 backdrop-blur-md border-b border-[#E5DDD0] transition-all duration-200">
-      {/* Top Subtle Notification Bar */}
-      <div className="bg-[#11161F] text-[#E2EAF0] text-[11px] py-1.5 px-4 text-center tracking-wider">
-        <div className="max-w-7xl mx-auto flex justify-between items-center text-[10px] sm:text-[11px] uppercase tracking-widest font-light">
-          <span className="hidden sm:inline text-neutral-400">
-            Sartorial Suiting, Contemporary Apparel & Institutional Mills
-          </span>
-          <span className="mx-auto sm:mx-0 font-medium text-white">
-            Wholesale Catalog & Bespoke Orders Available Worldwide
-          </span>
-          <a
-            href={`tel:${companyData.phone}`}
-            className="hidden md:inline text-[#8BA8BF] hover:text-white transition font-normal"
-          >
-            Concierge: {companyData.displayPhone}
-          </a>
+      {/* Top Infinite Marquee Announcement Bar */}
+      <div className="bg-[#11161F] text-[#E2EAF0] text-[10px] sm:text-[11px] py-2 overflow-hidden border-b border-neutral-800/80 relative marquee-container cursor-default select-none">
+        {/* Left & Right subtle edge fade gradients */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-16 bg-gradient-to-r from-[#11161F] to-transparent z-10" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-[#11161F] to-transparent z-10" />
+
+        <div className="flex w-max">
+          {/* Primary Track */}
+          <div className="animate-marquee flex items-center shrink-0">
+            {[
+              { text: "PREMIER SCHOOL UNIFORM MANUFACTURER & INSTITUTIONAL WEAVING MILLS", highlight: false },
+              { text: "WHOLESALE ACADEMY CATALOG & BESPOKE CRESTED ORDERS AVAILABLE WORLDWIDE", highlight: true },
+              { text: `CONCIERGE: ${companyData.displayPhone}`, href: `tel:${companyData.phone}`, isLink: true, highlight: false },
+              { text: "RAYMOND-GRADE WORSTED POLY-WOOL & PERMANENT PLEATED UNIFORMS SINCE 1994", highlight: false },
+              { text: "DIRECT MILL SUPPLY FOR 250+ PRESTIGIOUS SCHOOLS & INSTITUTIONS", highlight: true },
+              { text: "REQUEST COMPLIMENTARY SIZING RACK & FABRIC SWATCH BOX", highlight: false },
+            ].map((item, idx) => (
+              <div key={`m1-${idx}`} className="flex items-center">
+                {item.isLink ? (
+                  <a
+                    href={item.href}
+                    className="text-[#8BA8BF] hover:text-white transition-colors font-medium tracking-widest uppercase inline-flex items-center"
+                  >
+                    {item.text}
+                  </a>
+                ) : (
+                  <span
+                    className={`tracking-widest uppercase ${
+                      item.highlight ? "text-white font-medium" : "text-neutral-400 font-light"
+                    }`}
+                  >
+                    {item.text}
+                  </span>
+                )}
+                <span className="mx-6 text-[10px] text-[#C5A265]/70 select-none">✦</span>
+              </div>
+            ))}
+          </div>
+
+          {/* Duplicate Track for Seamless Infinite Scrolling */}
+          <div className="animate-marquee flex items-center shrink-0" aria-hidden="true">
+            {[
+              { text: "PREMIER SCHOOL UNIFORM MANUFACTURER & INSTITUTIONAL WEAVING MILLS", highlight: false },
+              { text: "WHOLESALE ACADEMY CATALOG & BESPOKE CRESTED ORDERS AVAILABLE WORLDWIDE", highlight: true },
+              { text: `CONCIERGE: ${companyData.displayPhone}`, href: `tel:${companyData.phone}`, isLink: true, highlight: false },
+              { text: "RAYMOND-GRADE WORSTED POLY-WOOL & PERMANENT PLEATED UNIFORMS SINCE 1994", highlight: false },
+              { text: "DIRECT MILL SUPPLY FOR 250+ PRESTIGIOUS SCHOOLS & INSTITUTIONS", highlight: true },
+              { text: "REQUEST COMPLIMENTARY SIZING RACK & FABRIC SWATCH BOX", highlight: false },
+            ].map((item, idx) => (
+              <div key={`m2-${idx}`} className="flex items-center">
+                {item.isLink ? (
+                  <a
+                    href={item.href}
+                    tabIndex={-1}
+                    className="text-[#8BA8BF] hover:text-white transition-colors font-medium tracking-widest uppercase inline-flex items-center"
+                  >
+                    {item.text}
+                  </a>
+                ) : (
+                  <span
+                    className={`tracking-widest uppercase ${
+                      item.highlight ? "text-white font-medium" : "text-neutral-400 font-light"
+                    }`}
+                  >
+                    {item.text}
+                  </span>
+                )}
+                <span className="mx-6 text-[10px] text-[#C5A265]/70 select-none">✦</span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
@@ -36,14 +92,17 @@ export default function Header() {
             <Link href="/" className="hover:text-[#6F8FA8] transition">
               Home
             </Link>
-            <Link href="/products?category=executive-blazers" className="hover:text-[#6F8FA8] transition">
+            <Link href="/products?category=school-blazers" className="hover:text-[#6F8FA8] transition">
               Blazers
             </Link>
-            <Link href="/products?category=luxury-shirts" className="hover:text-[#6F8FA8] transition">
-              Shirting
+            <Link href="/products?category=school-shirts" className="hover:text-[#6F8FA8] transition">
+              Shirts
             </Link>
-            <Link href="/products?category=school-blazers" className="hover:text-[#6F8FA8] transition">
-              Uniforms
+            <Link href="/products?category=school-skirts" className="hover:text-[#6F8FA8] transition">
+              Skirts & Pinafores
+            </Link>
+            <Link href="/bulk-orders" className="hover:text-[#6F8FA8] transition">
+              Bulk Supply
             </Link>
           </nav>
 
@@ -63,7 +122,13 @@ export default function Header() {
               href="/products"
               className="text-xs uppercase tracking-widest font-medium text-[#11161F] hover:text-[#6F8FA8] transition"
             >
-              Lookbook
+              Uniforms
+            </Link>
+            <Link
+              href="/about"
+              className="text-xs uppercase tracking-widest font-medium text-[#11161F] hover:text-[#6F8FA8] transition"
+            >
+              Heritage
             </Link>
             <Link
               href="/contact"
@@ -72,20 +137,25 @@ export default function Header() {
               Contact
             </Link>
             <WhatsAppButton
-              message="Hello Rooz Textile Concierge, I would like to inquire regarding wholesale suiting and lookbook catalog."
+              message="Hello Rooz Textile Concierge, I would like to inquire regarding school uniform supply."
               label="Inquire"
               size="sm"
               className="rounded-full bg-[#11161F] text-white hover:bg-[#6F8FA8] border-none px-4 py-2 text-[11px] uppercase tracking-wider"
             />
           </div>
 
-          {/* Mobile Menu Toggle */}
-          <div className="flex md:hidden items-center">
+          {/* Mobile menu button */}
+          <div className="flex md:hidden items-center gap-3">
+            <WhatsAppButton
+              message="Hello Rooz Textile, I would like to discuss school uniforms."
+              label="WhatsApp"
+              size="sm"
+              className="rounded-full bg-[#11161F] text-white text-[10px] px-3 py-1.5"
+            />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              type="button"
-              className="p-2 text-[#11161F] hover:text-[#6F8FA8] focus:outline-none"
-              aria-label="Toggle navigation menu"
+              className="p-2 text-[#11161F] hover:text-[#6F8FA8] transition"
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,32 +182,39 @@ export default function Header() {
             Home
           </Link>
           <Link
-            href="/products?category=executive-blazers"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
-          >
-            Blazers & Suiting
-          </Link>
-          <Link
-            href="/products?category=luxury-shirts"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
-          >
-            Luxury & Everyday Shirts
-          </Link>
-          <Link
             href="/products?category=school-blazers"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
           >
-            School Uniforms
+            School Blazers
+          </Link>
+          <Link
+            href="/products?category=school-shirts"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
+          >
+            Uniform Shirts & Blouses
+          </Link>
+          <Link
+            href="/products?category=school-skirts"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
+          >
+            Pleated Skirts & Pinafores
+          </Link>
+          <Link
+            href="/bulk-orders"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
+          >
+            Bulk School Supply
           </Link>
           <Link
             href="/products"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
           >
-            Complete Lookbook
+            Complete Uniforms
           </Link>
           <Link
             href="/about"

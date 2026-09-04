@@ -18,23 +18,79 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // Check if external LLM API key is provided
-    const apiKey = process.env.LLM_API_KEY || process.env.ANTHROPIC_API_KEY || process.env.OPENAI_API_KEY;
+    // Check for Google Gemini API Key first, then OpenAI / fallback
+    const geminiApiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
+    const openAiApiKey = process.env.OPENAI_API_KEY || process.env.LLM_API_KEY;
 
-    if (apiKey && process.env.OPENAI_API_KEY) {
-      try {
-        const systemPrompt = `You are the distinguished B2B suiting and apparel concierge for "Rooz Textile", a premier manufacturer of fine worsted suiting (Super 130s Australian Merino blazers, 2-ply Egyptian Giza cotton shirts) and Raymond-grade institutional school uniforms (poly-wool blazers, Oxford shirts, pleated skirts, crested ties) since 1994. 
+    const systemPrompt = `You are the distinguished B2B suiting and apparel concierge for "Rooz Textile", a premier manufacturer of fine worsted suiting (Super 130s Australian Merino blazers, 2-ply Egyptian Giza cotton shirts) and Raymond-grade institutional school uniforms (poly-wool blazers, Oxford shirts, pleated skirts, crested ties) since 1994. 
 You speak to corporate executives, luxury brand directors, and school principals with refined, luxury heritage hospitality.
 Keep answers informative and elegant. Highlight fabric specs (e.g., Super 130s Merino 270 GSM, Egyptian Giza 145 GSM, Poly-wool 280 GSM), MOQs (executive blazers: 20 pcs, shirts: 30 pcs, school blazers: 50 pcs), half-canvas construction, and custom monogramming/crests.
 Encourage contacting the concierge desk on WhatsApp for fabric swatch presentation boxes and formal quote sheets.
 Catalog data: ${JSON.stringify(productsData)}
 Company data: ${JSON.stringify(companyData)}`;
 
+    // 1. Google Gemini API Call
+    if (geminiApiKey) {
+      try {
+        const contents =
+          messages && messages.length > 0
+            ? messages.map((m: { role: string; content: string }) => ({
+                role: m.role === "assistant" ? "model" : "user",
+                parts: [{ text: m.content }],
+              }))
+            : [{ role: "user", parts: [{ text: userQuery }] }];
+
+        const response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiApiKey}`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              systemInstruction: {
+                parts: [{ text: systemPrompt }],
+              },
+              contents,
+              generationConfig: {
+                temperature: 0.7,
+              },
+            }),
+          }
+        );
+
+        if (response.ok) {
+          const data = await response.json();
+          const reply = data.candidates?.[0]?.content?.parts?.[0]?.text || "";
+          if (reply) {
+            return NextResponse.json({
+              role: "assistant",
+              content: reply,
+              whatsappUrl: getAIEscalationUrl(userQuery, "AI Assistance Escalation"),
+              suggestedQuestions: [
+                "What is the MOQ for school blazers?",
+                "Request an Institutional Sample Kit",
+                "Connect on WhatsApp with a uniform specialist",
+              ],
+            });
+          }
+        } else {
+          const errorText = await response.text();
+          console.warn("Google Gemini API error response:", errorText);
+        }
+      } catch (err) {
+        console.warn("Google Gemini API call failed, falling back to catalog engine:", err);
+      }
+    }
+
+    // 2. OpenAI API Fallback
+    if (openAiApiKey) {
+      try {
         const response = await fetch("https://api.openai.com/v1/chat/completions", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${apiKey}`,
+            Authorization: `Bearer ${openAiApiKey}`,
           },
           body: JSON.stringify({
             model: "gpt-4o-mini",
@@ -61,7 +117,7 @@ Company data: ${JSON.stringify(companyData)}`;
           });
         }
       } catch (err) {
-        console.warn("External LLM proxy call failed, falling back to catalog engine:", err);
+        console.warn("OpenAI API call failed, falling back to catalog engine:", err);
       }
     }
 

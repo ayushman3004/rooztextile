@@ -14,8 +14,8 @@ export default function BulkOrdersPage() {
       <section className="relative w-full min-h-[50vh] sm:min-h-[58vh] flex items-center justify-center overflow-hidden bg-[#11161F] text-white">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-editorial.jpg"
-            alt="Wholesale & Bulk Programs"
+            src="/images/school-hero.jpg"
+            alt="Wholesale & Bulk School Uniform Programs"
             fill
             priority
             className="object-cover object-center filter brightness-[0.72]"
@@ -50,12 +50,12 @@ export default function BulkOrdersPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Tier 1 */}
-            <div className="p-8 sm:p-10 bg-white rounded-[2.5rem] text-[#11161F] space-y-6 flex flex-col justify-between shadow-xl">
+            <div className="relative p-8 sm:p-10 bg-white rounded-[2.5rem] text-[#11161F] space-y-6 flex flex-col justify-between shadow-xl">
               <div className="space-y-3">
                 <span className="text-xs uppercase tracking-[0.2em] text-[#7D1826] font-bold block">
                   TIER 01 • EXECUTIVE PILOT
                 </span>
-                <h3 className="editorial-underline-dark text-3xl font-light text-[#11161F]">
+                <h3 className="text-3xl font-light text-[#11161F]">
                   20 – 50 Units
                 </h3>
                 <p className="text-xs text-neutral-600 font-light leading-relaxed pt-2">
@@ -97,7 +97,7 @@ export default function BulkOrdersPage() {
                 <span className="text-xs uppercase tracking-[0.2em] text-white/80 font-bold block">
                   TIER 02 • CORPORATE & CAMPUS
                 </span>
-                <h3 className="editorial-underline text-3xl font-light text-white">
+                <h3 className="text-3xl font-light text-white">
                   50 – 500 Units
                 </h3>
                 <p className="text-xs text-white/90 font-light leading-relaxed pt-2">
@@ -134,12 +134,12 @@ export default function BulkOrdersPage() {
             </div>
 
             {/* Tier 3 */}
-            <div className="p-8 sm:p-10 bg-white rounded-[2.5rem] text-[#11161F] space-y-6 flex flex-col justify-between shadow-xl">
+            <div className="relative p-8 sm:p-10 bg-white rounded-[2.5rem] text-[#11161F] space-y-6 flex flex-col justify-between shadow-xl">
               <div className="space-y-3">
                 <span className="text-xs uppercase tracking-[0.2em] text-[#7D1826] font-bold block">
                   TIER 03 • ENTERPRISE & TRUST
                 </span>
-                <h3 className="editorial-underline-dark text-3xl font-light text-[#11161F]">
+                <h3 className="text-3xl font-light text-[#11161F]">
                   500+ Units
                 </h3>
                 <p className="text-xs text-neutral-600 font-light leading-relaxed pt-2">
@@ -214,8 +214,8 @@ export default function BulkOrdersPage() {
             <div className="lg:col-span-6">
               <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden bg-[#EDE7DC] shadow-xl">
                 <Image
-                  src="/images/community-model.jpg"
-                  alt="Fitting Sessions"
+                  src="/images/girls-uniform.jpg"
+                  alt="School Uniform Sizing and Fitting Sessions"
                   fill
                   className="object-cover object-center"
                 />

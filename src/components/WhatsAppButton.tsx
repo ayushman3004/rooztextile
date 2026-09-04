@@ -4,7 +4,7 @@ import { getWhatsAppUrl } from "@/lib/whatsapp";
 interface WhatsAppButtonProps {
   message: string;
   label?: string;
-  variant?: "primary" | "secondary" | "gold" | "outline";
+  variant?: "primary" | "secondary" | "gold" | "outline" | "white";
   size?: "sm" | "md" | "lg";
   className?: string;
   icon?: boolean;
@@ -21,23 +21,25 @@ export default function WhatsAppButton({
   const url = getWhatsAppUrl(message);
 
   const baseStyles =
-    "inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer select-none rounded-sm shadow-sm active:translate-y-px tracking-wide";
+    "inline-flex items-center justify-center font-medium transition-all duration-200 cursor-pointer select-none rounded-full shadow-sm active:translate-y-px tracking-wide";
 
   const sizeStyles = {
-    sm: "px-3 py-1.5 text-xs gap-1.5",
+    sm: "px-4 py-2 text-xs gap-1.5",
     md: "px-5 py-2.5 text-sm gap-2",
     lg: "px-7 py-3.5 text-base gap-2.5 font-semibold",
   };
 
   const variantStyles = {
     primary:
-      "bg-[#141C2B] text-[#FBF9F5] border border-[#273449] hover:bg-[#0B1320] hover:border-[#C5A265] hover:text-[#E4CA95]",
+      "bg-[#11161F] text-white border border-[#273449] hover:bg-[#6F8FA8] hover:border-[#6F8FA8]",
     secondary:
       "bg-[#25D366] text-white hover:bg-[#1EBE5D] border border-[#1EBE5D]",
     gold:
       "bg-[#C5A265] text-[#0B1320] font-semibold hover:bg-[#D8B878] border border-[#9F7E3B] shadow-md",
     outline:
-      "bg-transparent text-[#141C2B] border border-[#C5A265] hover:bg-[#C5A265]/10 hover:border-[#9F7E3B]",
+      "bg-transparent text-[#11161F] border border-[#11161F]/30 hover:border-[#11161F]",
+    white:
+      "bg-white text-[#11161F] hover:bg-[#FAF7F0] border border-transparent shadow-sm",
   };
 
   return (

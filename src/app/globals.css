@@ -46,7 +46,8 @@ body {
 }
 
 /* Reference Underline for Category Titles (like Image 2: Dresses, Knits) */
-.editorial-underline {
+.editorial-underline,
+.editorial-underline-dark {
   position: relative;
   display: inline-block;
 }
@@ -123,8 +124,36 @@ body {
   animation: fadeIn 0.4s ease-out forwards;
 }
 
+/* Smooth Infinite Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  flex-shrink: 0;
+  animation: marquee 32s linear infinite;
+  will-change: transform;
+}
+
+.marquee-container:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation-play-state: paused;
+  }
+}
+
 /* Custom focus ring */
 *:focus-visible {
   outline: 2px solid #6F8FA8;
   outline-offset: 2px;
 }
+

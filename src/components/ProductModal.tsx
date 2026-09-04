@@ -30,94 +30,98 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
   const isExecutive = product.division === "executive";
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/75 backdrop-blur-md animate-fadeIn">
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-5 md:p-6 bg-black/80 backdrop-blur-md animate-fadeIn"
+      onClick={onClose}
+    >
       {/* Modal Container */}
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto bg-[#FDFBF7] rounded-[2.5rem] shadow-2xl border border-[#E5DDD0] text-[#11161F]"
+        className="relative w-full max-w-4xl lg:max-w-5xl h-auto max-h-[92vh] md:h-[86vh] bg-[#FDFBF7] rounded-[2rem] sm:rounded-[2.5rem] shadow-2xl border border-[#E5DDD0] text-[#11161F] overflow-hidden flex flex-col md:flex-row"
         onClick={(e) => e.stopPropagation()}
       >
-        {/* Close Button */}
-        <button
-          onClick={onClose}
-          className="absolute top-5 right-5 z-10 p-2 text-neutral-500 hover:text-black bg-white/90 hover:bg-[#FAF7F0] rounded-full border border-[#E5DDD0] transition shadow-xs"
-          aria-label="Close modal"
-        >
-          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          {/* Left: Product Media & Badges */}
-          <div className="relative bg-[#11161F] p-6 sm:p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#E5DDD0]">
-            <div>
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[2rem] border border-white/10 shadow-xl">
-                <Image
-                  src={product.image}
-                  alt={product.name}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
-                  priority
-                />
-                <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 items-start">
-                  <span
-                    className={`text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded-full ${
-                      isExecutive
-                        ? "bg-white text-[#11161F]"
-                        : "bg-[#6F8FA8] text-white"
-                    }`}
-                  >
-                    {isExecutive ? "Sartorial Atelier" : "Institutional Division"}
+        {/* Left: Product Media & Badges */}
+        <div className="w-full md:w-[42%] lg:w-[40%] bg-[#11161F] p-5 sm:p-7 flex flex-col justify-between border-b md:border-b-0 md:border-r border-[#263345] text-white shrink-0 overflow-y-auto">
+          <div>
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[1.5rem] border border-white/10 shadow-xl bg-black/40">
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                sizes="(max-width: 768px) 100vw, 40vw"
+                className="object-cover"
+                priority
+              />
+              <div className="absolute top-3.5 left-3.5 flex flex-col gap-1.5 items-start">
+                <span
+                  className={`text-[9px] uppercase font-bold tracking-widest px-3 py-1 rounded-full shadow-xs ${
+                    isExecutive
+                      ? "bg-white text-[#11161F]"
+                      : "bg-[#6F8FA8] text-white"
+                  }`}
+                >
+                  {isExecutive ? "Sartorial Atelier" : "Institutional Division"}
+                </span>
+                {product.badge && (
+                  <span className="bg-black/70 text-white text-[9px] uppercase font-medium tracking-wider px-2.5 py-0.5 rounded-full border border-white/20 backdrop-blur-xs">
+                    {product.badge}
                   </span>
-                  {product.badge && (
-                    <span className="bg-black/60 text-white text-[9px] uppercase font-medium tracking-wider px-2.5 py-0.5 rounded-full border border-white/20">
-                      {product.badge}
-                    </span>
-                  )}
-                </div>
-              </div>
-
-              {/* Quick Specs Highlight Bar */}
-              <div className="mt-6 grid grid-cols-3 gap-2 text-center">
-                <div className="bg-[#1C2430] p-3 rounded-2xl border border-white/10">
-                  <span className="block text-[10px] uppercase tracking-wider text-neutral-400">Weight</span>
-                  <span className="text-sm font-bold text-[#8BA8BF]">{product.gsm} GSM</span>
-                </div>
-                <div className="bg-[#1C2430] p-3 rounded-2xl border border-white/10">
-                  <span className="block text-[10px] uppercase tracking-wider text-neutral-400">Min Order</span>
-                  <span className="text-sm font-bold text-white">{product.moq} pcs</span>
-                </div>
-                <div className="bg-[#1C2430] p-3 rounded-2xl border border-white/10">
-                  <span className="block text-[10px] uppercase tracking-wider text-neutral-400">Lead Time</span>
-                  <span className="text-sm font-bold text-white">{product.leadTime}</span>
-                </div>
+                )}
               </div>
             </div>
 
-            <div className="mt-6 p-4 bg-[#1C2430] rounded-2xl border border-white/10 text-xs text-neutral-300 font-light">
-              <span className="text-white font-semibold block mb-1">
-                {isExecutive ? "Sartorial Standards:" : "Durability Assurance:"}
-              </span>
-              {isExecutive
-                ? "Tested for shape memory drape, Woolmark standard fiber crimp, and dry cleaning cycle integrity."
-                : "Tested for 100+ commercial wash cycles, AATCC Grade 4.5+ colorfastness rating, and reinforced seams."}
+            {/* Quick Specs Highlight Bar */}
+            <div className="mt-5 grid grid-cols-3 gap-2 text-center">
+              <div className="bg-[#1C2430] p-2.5 sm:p-3 rounded-2xl border border-white/10 shadow-xs">
+                <span className="block text-[9px] uppercase tracking-wider text-neutral-400">Weight</span>
+                <span className="text-xs sm:text-sm font-bold text-[#8BA8BF]">{product.gsm} GSM</span>
+              </div>
+              <div className="bg-[#1C2430] p-2.5 sm:p-3 rounded-2xl border border-white/10 shadow-xs">
+                <span className="block text-[9px] uppercase tracking-wider text-neutral-400">Min Order</span>
+                <span className="text-xs sm:text-sm font-bold text-white">{product.moq} pcs</span>
+              </div>
+              <div className="bg-[#1C2430] p-2.5 sm:p-3 rounded-2xl border border-white/10 shadow-xs">
+                <span className="block text-[9px] uppercase tracking-wider text-neutral-400">Lead Time</span>
+                <span className="text-xs sm:text-sm font-bold text-white">{product.leadTime}</span>
+              </div>
             </div>
           </div>
 
-          {/* Right: Technical Specifications */}
-          <div className="p-6 sm:p-8 space-y-5">
+          <div className="mt-5 p-4 bg-[#1C2430] rounded-2xl border border-white/10 text-xs text-neutral-300 font-light shadow-xs">
+            <span className="text-white font-semibold block mb-1">
+              {isExecutive ? "Sartorial Standards:" : "Durability Assurance:"}
+            </span>
+            {isExecutive
+              ? "Tested for shape memory drape, Woolmark standard fiber crimp, and dry cleaning cycle integrity."
+              : "Tested for 100+ commercial wash cycles, AATCC Grade 4.5+ colorfastness rating, and reinforced seams."}
+          </div>
+        </div>
+
+        {/* Right: Technical Specifications & Actions */}
+        <div className="w-full md:w-[58%] lg:w-[60%] flex flex-col h-full min-h-0 bg-[#FDFBF7] relative overflow-hidden">
+          {/* Close Button */}
+          <button
+            onClick={onClose}
+            className="absolute top-4 right-4 z-20 p-2 text-neutral-500 hover:text-black bg-white/95 hover:bg-[#FAF7F0] rounded-full border border-[#E5DDD0] transition shadow-xs"
+            aria-label="Close modal"
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+
+          {/* Scrollable Specifications Content */}
+          <div className="flex-1 overflow-y-auto p-6 sm:p-8 space-y-5 pr-5 sm:pr-8">
             <div>
               <span className="text-[10px] uppercase font-bold tracking-widest text-[#6F8FA8]">
                 {product.categoryLabel}
               </span>
-              <h2 className="editorial-underline-dark font-editorial-heading text-2xl sm:text-3xl font-normal text-[#11161F] mt-1">
+              <h2 className="font-editorial-heading text-2xl sm:text-3xl font-normal text-[#11161F] mt-1 pr-8">
                 {product.name}
               </h2>
               <p className="text-xs text-neutral-500 mt-2 font-light italic">{product.tagline}</p>
             </div>
 
-            <p className="text-sm text-neutral-700 leading-relaxed border-t border-b border-[#E5DDD0] py-3 font-light">
+            <p className="text-xs sm:text-sm text-neutral-700 leading-relaxed border-t border-b border-[#E5DDD0] py-3 font-light">
               {product.description}
             </p>
 
@@ -158,7 +162,7 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
                 {product.colors.map((c, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-1.5 px-3 py-1 bg-white border border-[#E5DDD0] rounded-full text-xs text-neutral-800"
+                    className="flex items-center gap-1.5 px-3 py-1 bg-white border border-[#E5DDD0] rounded-full text-xs text-neutral-800 shadow-2xs"
                   >
                     <span
                       className="w-3 h-3 rounded-full border border-black/10 shrink-0"
@@ -188,44 +192,44 @@ export default function ProductModal({ product, onClose }: ProductModalProps) {
             </div>
 
             {/* Key Features */}
-            <div>
+            <div className="pb-2">
               <span className="block text-xs font-semibold text-[#11161F] uppercase tracking-wider mb-1.5">
                 Craftsmanship Elements:
               </span>
-              <ul className="space-y-1 text-xs text-neutral-700 font-light">
+              <ul className="space-y-1.5 text-xs text-neutral-700 font-light">
                 {product.features.map((feat, idx) => (
-                  <li key={idx} className="flex items-start gap-1.5">
-                    <span className="text-[#6F8FA8] font-bold">✓</span>
-                    <span>{feat}</span>
+                  <li key={idx} className="flex items-start gap-2">
+                    <span className="text-[#6F8FA8] font-bold shrink-0">✓</span>
+                    <span className="leading-snug">{feat}</span>
                   </li>
                 ))}
               </ul>
             </div>
+          </div>
 
-            {/* Call to Actions */}
-            <div className="pt-2 flex flex-col sm:flex-row gap-3">
-              <a
-                href={getProductInquiryUrl(product)}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#11161F] text-white text-xs font-semibold hover:bg-[#6F8FA8] transition shadow-md text-center uppercase tracking-wider"
-              >
-                <span>WhatsApp Wholesale Inquiry</span>
-                <span>→</span>
-              </a>
+          {/* Pinned Action Footer */}
+          <div className="shrink-0 p-4 sm:px-8 sm:py-4 bg-[#FDFBF7] border-t border-[#E5DDD0] flex flex-col sm:flex-row gap-3 shadow-[0_-6px_20px_rgba(0,0,0,0.03)] z-10">
+            <a
+              href={getProductInquiryUrl(product)}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-[#11161F] text-white text-xs font-semibold hover:bg-[#6F8FA8] transition shadow-md text-center uppercase tracking-wider"
+            >
+              <span>WhatsApp Wholesale Inquiry</span>
+              <span>→</span>
+            </a>
 
-              <a
-                href={getSampleKitUrl({
-                  division: isExecutive ? "executive" : "institutional",
-                  articles: [product.name],
-                })}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white text-[#11161F] border border-[#D3CBBF] text-xs font-semibold hover:bg-[#FAF7F0] transition text-center uppercase tracking-wider"
-              >
-                Order Swatches
-              </a>
-            </div>
+            <a
+              href={getSampleKitUrl({
+                division: isExecutive ? "executive" : "institutional",
+                articles: [product.name],
+              })}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-6 py-3.5 rounded-full bg-white text-[#11161F] border border-[#D3CBBF] text-xs font-semibold hover:bg-[#FAF7F0] transition text-center uppercase tracking-wider"
+            >
+              Order Swatches
+            </a>
           </div>
         </div>
       </div>
