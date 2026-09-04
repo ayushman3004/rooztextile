@@ -28,7 +28,7 @@ export default function HomePage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/school-hero.jpg"
-            alt="Rooz Textile School Uniforms & Institutional Apparel"
+            alt="RoozTextile School Uniforms & Institutional Apparel"
             fill
             priority
             className="object-cover object-center filter brightness-[0.78]"
@@ -40,7 +40,7 @@ export default function HomePage() {
         <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 text-center py-24 sm:py-32 flex flex-col items-center justify-center space-y-6">
           {/* Centered Delicate Brandmark (like bhat & rao in Image 1) */}
           <div className="font-serif-brand text-2xl sm:text-3xl tracking-tight text-white/90 drop-shadow-sm font-normal">
-            rooz textile
+            RoozTextile
           </div>
 
           {/* Big Bold Modern Headline: MOST WANTED AND MOST LOVED */}
@@ -205,7 +205,7 @@ export default function HomePage() {
             <div className="lg:col-span-6 space-y-8">
               {/* Brandmark */}
               <div className="font-serif-brand text-3xl sm:text-4xl tracking-tight text-white font-normal">
-                rooz textile
+                RoozTextile
               </div>
 
               {/* Location Block */}
@@ -252,7 +252,7 @@ export default function HomePage() {
 
                 <div className="flex flex-wrap gap-3">
                   <a
-                    href={getWhatsAppUrl("Hello Rooz Textile, I am contacting your concierge regarding suiting, shirts, and custom apparel.")}
+                    href={getWhatsAppUrl("Hello RoozTextile, I am contacting your concierge regarding suiting, shirts, and custom apparel.")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-6 py-3 bg-white text-[#11161F] text-xs font-semibold rounded-full hover:bg-[#FAF7F0] transition shadow-md uppercase tracking-wider"
@@ -277,7 +277,7 @@ export default function HomePage() {
               <div className="relative aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] rounded-[3rem] overflow-hidden bg-[#56758D] shadow-2xl">
                 <Image
                   src="/images/boys-uniform.jpg"
-                  alt="Rooz Textile School Uniform Standards"
+                  alt="RoozTextile School Uniform Standards"
                   fill
                   className="object-cover object-top"
                 />
@@ -323,7 +323,7 @@ export default function HomePage() {
                   St. Xavier&apos;s Heritage Academy (2,400+ Students)
                 </p>
                 <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed">
-                  &ldquo;Rooz Textile has supplied our entire secondary school body with winter poly-wool blazers and summer Oxford shirts for 8 consecutive sessions. The dye consistency across annual reorders and reinforced stitching save our parents considerable money.&rdquo;
+                  &ldquo;RoozTextile has supplied our entire secondary school body with winter poly-wool blazers and summer Oxford shirts for 8 consecutive sessions. The dye consistency across annual reorders and reinforced stitching save our parents considerable money.&rdquo;
                 </p>
               </div>
 
@@ -335,7 +335,7 @@ export default function HomePage() {
                   Convent of Jesus & Mary High School (1,800+ Students)
                 </p>
                 <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed">
-                  &ldquo;Managing uniforms across 4 house factions was a logistics challenge until we partnered with Rooz Textile. Their permanent knife-pleated skirts genuinely hold up to industrial machine washes without losing their sharpness.&rdquo;
+                  &ldquo;Managing uniforms across 4 house factions was a logistics challenge until we partnered with RoozTextile. Their permanent knife-pleated skirts genuinely hold up to industrial machine washes without losing their sharpness.&rdquo;
                 </p>
               </div>
 
@@ -371,7 +371,7 @@ export default function HomePage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-6">
           <span className="font-serif-brand text-xl sm:text-2xl tracking-tight text-white/90 font-normal">
-            rooz textile
+            RoozTextile
           </span>
 
           <h2 className="font-editorial-heading text-4xl sm:text-6xl md:text-7xl font-normal text-white tracking-tight leading-[1.05]">

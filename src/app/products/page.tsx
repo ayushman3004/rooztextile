@@ -63,7 +63,7 @@ function ProductsContent() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center py-20 space-y-4">
           <span className="font-serif-brand text-2xl sm:text-3xl tracking-tight text-white/90 font-normal">
-            rooz textile
+            RoozTextile
           </span>
           <h1 className="font-display-bold text-4xl sm:text-6xl md:text-7xl tracking-tight text-white leading-none drop-shadow-md">
             THE SCHOOL UNIFORM ARCHIVE
@@ -209,7 +209,7 @@ function ProductsContent() {
 export default function ProductsPage() {
   return (
     <main className="min-h-screen bg-[#FDFBF7]">
-      <Suspense fallback={<div className="p-12 text-center text-sm">Loading Rooz Textile archive...</div>}>
+      <Suspense fallback={<div className="p-12 text-center text-sm">Loading RoozTextile archive...</div>}>
         <ProductsContent />
       </Suspense>
     </main>

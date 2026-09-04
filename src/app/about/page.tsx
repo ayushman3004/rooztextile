@@ -10,7 +10,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/school-hero.jpg"
-            alt="The Rooz Textile School Uniform Atelier"
+            alt="The RoozTextile School Uniform Atelier"
             fill
             priority
             className="object-cover object-center filter brightness-[0.72]"
@@ -20,7 +20,7 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center py-20 space-y-4">
           <span className="font-serif-brand text-2xl sm:text-3xl tracking-tight text-white/90 font-normal">
-            rooz textile
+            RoozTextile
           </span>
           <h1 className="font-display-bold text-4xl sm:text-6xl md:text-7xl tracking-tight text-white leading-none drop-shadow-md">
             SOUL, SUBSTANCE & SARTORIAL ART
@@ -51,7 +51,7 @@ export default function AboutPage() {
               </div>
 
               <p className="text-sm sm:text-base text-white/90 font-light leading-relaxed">
-                Drawing inspiration from historic woolen houses like Raymond and the tailoring ateliers of Savile Row, Rooz Textile established its first weaving looms in 1994. We set out to eliminate the false divide between luxurious drape and industrial longevity.
+                Drawing inspiration from historic woolen houses like Raymond and the tailoring ateliers of Savile Row, RoozTextile established its first weaving looms in 1994. We set out to eliminate the false divide between luxurious drape and industrial longevity.
               </p>
 
               <p className="text-sm sm:text-base text-white/90 font-light leading-relaxed">
@@ -91,7 +91,7 @@ export default function AboutPage() {
               <div className="relative aspect-[4/5] rounded-[3rem] overflow-hidden bg-[#56758D] shadow-2xl">
                 <Image
                   src="/images/boys-uniform.jpg"
-                  alt="Rooz Textile School Uniform Craftsmanship"
+                  alt="RoozTextile School Uniform Craftsmanship"
                   fill
                   className="object-cover object-top"
                 />
@@ -179,7 +179,7 @@ export default function AboutPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center space-y-6">
           <span className="font-serif-brand text-xl sm:text-2xl tracking-tight text-white/90 font-normal">
-            rooz textile
+            RoozTextile
           </span>
 
           <h2 className="font-editorial-heading text-4xl sm:text-6xl font-normal text-white tracking-tight leading-[1.05]">
@@ -192,7 +192,7 @@ export default function AboutPage() {
 
           <div className="pt-2 flex flex-wrap justify-center gap-3">
             <a
-              href={getWhatsAppUrl("Hello Rooz Textile, We would like to schedule an appointment to visit your mill and executive showroom.")}
+              href={getWhatsAppUrl("Hello RoozTextile, We would like to schedule an appointment to visit your mill and executive showroom.")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-[#11161F] font-semibold text-xs sm:text-sm tracking-wide rounded-full shadow-lg transition uppercase hover:bg-[#FAF7F0]"

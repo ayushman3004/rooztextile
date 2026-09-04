@@ -14,7 +14,7 @@ export const testimonialsData: Testimonial[] = [
   {
     id: "1",
     quote:
-      "Rooz Textile has supplied our entire secondary school body with winter poly-wool blazers and summer Oxford shirts for over 8 consecutive academic sessions. The dye consistency across multiple reorders is extraordinary—a freshman blazer looks identical in color tone to a senior's. Their attention to reinforced stitching saves our parents considerable money.",
+      "RoozTextile has supplied our entire secondary school body with winter poly-wool blazers and summer Oxford shirts for over 8 consecutive academic sessions. The dye consistency across multiple reorders is extraordinary—a freshman blazer looks identical in color tone to a senior's. Their attention to reinforced stitching saves our parents considerable money.",
     author: "Dr. Alistair Henderson",
     role: "Head of Administration & Procurement",
     institution: "St. Xavier's Heritage Academy",
@@ -26,7 +26,7 @@ export const testimonialsData: Testimonial[] = [
   {
     id: "2",
     quote:
-      "Managing uniforms for 1,800 girls across 4 house factions was a logistics nightmare until we partnered with Rooz Textile. Their permanent knife-pleated skirts genuinely hold up to industrial machine washes without losing their pleats. Their sample approval turnaround via WhatsApp was under 72 hours.",
+      "Managing uniforms for 1,800 girls across 4 house factions was a logistics nightmare until we partnered with RoozTextile. Their permanent knife-pleated skirts genuinely hold up to industrial machine washes without losing their pleats. Their sample approval turnaround via WhatsApp was under 72 hours.",
     author: "Sister Mary Margaret",
     role: "Principal & Trustee",
     institution: "Convent of Jesus & Mary High School",

@@ -38,7 +38,7 @@ export default function ContactPage() {
             {/* Left Column: Bold Minimalist Hierarchy */}
             <div className="lg:col-span-6 space-y-8">
               <div className="font-serif-brand text-3xl sm:text-4xl tracking-tight text-white font-normal">
-                rooz textile
+                RoozTextile
               </div>
 
               <div className="space-y-1">
@@ -82,7 +82,7 @@ export default function ContactPage() {
 
                 <div className="flex flex-wrap gap-3">
                   <a
-                    href={getWhatsAppUrl("Hello Rooz Textile, I am contacting your concierge desk.")}
+                    href={getWhatsAppUrl("Hello RoozTextile, I am contacting your concierge desk.")}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center px-6 py-3 bg-white text-[#11161F] text-xs font-semibold rounded-full hover:bg-[#FAF7F0] transition shadow-md uppercase tracking-wider"
@@ -105,7 +105,7 @@ export default function ContactPage() {
               <div className="relative aspect-[4/5] sm:aspect-[1/1] lg:aspect-[4/5] rounded-[3rem] overflow-hidden bg-[#56758D] shadow-2xl">
                 <Image
                   src="/images/boys-uniform.jpg"
-                  alt="Rooz Textile Concierge Desk"
+                  alt="RoozTextile Concierge Desk"
                   fill
                   className="object-cover object-top"
                 />

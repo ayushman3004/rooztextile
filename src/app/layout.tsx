@@ -20,7 +20,7 @@ const jakarta = Plus_Jakarta_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rooztextile.com"),
-  title: "Rooz Textile | Fine Worsted Suiting, Executive Attire & Institutional Mills Since 1994",
+  title: "RoozTextile | Fine Worsted Suiting, Executive Attire & Institutional Mills Since 1994",
   description:
     "Premier manufacturer of fine worsted suiting: Super 130s Merino wool blazers, 2-ply Egyptian Giza cotton shirts, and Raymond-grade institutional school uniforms. Equipping 500+ corporations, luxury labels, and prestigious academies.",
   keywords: [
@@ -33,22 +33,22 @@ export const metadata: Metadata = {
     "fine worsted suiting mill India",
     "Raymond grade suiting fabric manufacturer",
   ],
-  authors: [{ name: "Rooz Textile Mills" }],
-  creator: "Rooz Textile",
+  authors: [{ name: "RoozTextile Mills" }],
+  creator: "RoozTextile",
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://rooztextile.com",
-    title: "Rooz Textile | Premier Wholesale School Uniform Manufacturer Since 1994",
+    title: "RoozTextile | Premier Wholesale School Uniform Manufacturer Since 1994",
     description:
       "Raymond-grade school blazers, shirts, and skirts engineered for prestigious educational institutions. Contextual WhatsApp quoting and institutional sample kits.",
-    siteName: "Rooz Textile",
+    siteName: "RoozTextile",
     images: [
       {
         url: "/images/blazers.jpg",
         width: 1200,
         height: 900,
-        alt: "Rooz Textile Flagship Poly-Wool School Blazer",
+        alt: "RoozTextile Flagship Poly-Wool School Blazer",
       },
     ],
   },

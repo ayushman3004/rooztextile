@@ -15,7 +15,7 @@ export default function AIChatWidget() {
   const initialMessage: ChatMessage = {
     role: "assistant",
     content:
-      "Greetings. I am the **Rooz Textile Suiting Concierge**. I can assist you with fabric specifications (Super 130s Merino Wool, 2-Ply Egyptian Giza Cotton, Poly-Wool Twills), minimum order quantities (MOQ), luxury swatch presentation boxes, and bespoke crest or monogramming options. How may I serve your organization today?",
+      "Greetings. I am the **RoozTextile Suiting Concierge**. I can assist you with fabric specifications (Super 130s Merino Wool, 2-Ply Egyptian Giza Cotton, Poly-Wool Twills), minimum order quantities (MOQ), luxury swatch presentation boxes, and bespoke crest or monogramming options. How may I serve your organization today?",
     whatsappUrl: getAIEscalationUrl("Inquiry from Suiting Concierge"),
     suggestedQuestions: [
       "Tell me about Super 130s Merino Blazers",
@@ -81,7 +81,7 @@ export default function AIChatWidget() {
             setHasInteracted(true);
           }}
           className="relative group flex items-center gap-3 bg-[#11161F] text-white border-2 border-[#6F8FA8] pl-4 pr-5 py-3.5 rounded-full shadow-2xl hover:bg-[#1E2633] transition-all duration-300 animate-fadeIn cursor-pointer"
-          aria-label="Open Rooz Textile Suiting Concierge"
+          aria-label="Open RoozTextile Suiting Concierge"
         >
           <div className="relative w-8 h-8 rounded-full bg-[#1C2430] border border-[#8BA8BF] p-1 flex items-center justify-center shrink-0">
             <Image
@@ -126,7 +126,7 @@ export default function AIChatWidget() {
               </div>
               <div>
                 <h3 className="font-editorial-heading text-base font-normal tracking-wide text-white flex items-center gap-1.5">
-                  Rooz Textile Concierge
+                  RoozTextile Concierge
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 </h3>
                 <p className="text-[10px] text-white/80 uppercase tracking-widest font-light">

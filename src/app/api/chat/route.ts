@@ -22,7 +22,7 @@ export async function POST(req: NextRequest) {
     const geminiApiKey = process.env.GEMINI_API_KEY || process.env.GOOGLE_API_KEY;
     const openAiApiKey = process.env.OPENAI_API_KEY || process.env.LLM_API_KEY;
 
-    const systemPrompt = `You are the distinguished B2B suiting and apparel concierge for "Rooz Textile", a premier manufacturer of fine worsted suiting (Super 130s Australian Merino blazers, 2-ply Egyptian Giza cotton shirts) and Raymond-grade institutional school uniforms (poly-wool blazers, Oxford shirts, pleated skirts, crested ties) since 1994. 
+    const systemPrompt = `You are the distinguished B2B suiting and apparel concierge for "RoozTextile", a premier manufacturer of fine worsted suiting (Super 130s Australian Merino blazers, 2-ply Egyptian Giza cotton shirts) and Raymond-grade institutional school uniforms (poly-wool blazers, Oxford shirts, pleated skirts, crested ties) since 1994. 
 You speak to corporate executives, luxury brand directors, and school principals with refined, luxury heritage hospitality.
 Keep answers informative and elegant. Highlight fabric specs (e.g., Super 130s Merino 270 GSM, Egyptian Giza 145 GSM, Poly-wool 280 GSM), MOQs (executive blazers: 20 pcs, shirts: 30 pcs, school blazers: 50 pcs), half-canvas construction, and custom monogramming/crests.
 Encourage contacting the concierge desk on WhatsApp for fabric swatch presentation boxes and formal quote sheets.
@@ -130,7 +130,7 @@ Company data: ${JSON.stringify(companyData)}`;
       {
         role: "assistant",
         content:
-          "Thank you for contacting Rooz Textile. Our procurement specialists are ready to assist with fabric samples, school crest embroidery, and bulk tier quotes directly on WhatsApp.",
+          "Thank you for contacting RoozTextile. Our procurement specialists are ready to assist with fabric samples, school crest embroidery, and bulk tier quotes directly on WhatsApp.",
         whatsappUrl: getAIEscalationUrl("General Inquiry"),
       },
       { status: 200 }

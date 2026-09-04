@@ -34,7 +34,7 @@ export function queryCatalogEngine(userQuery: string): ChatMessage {
     const execBlazers = productsData.filter((p) => p.division === "executive");
     return {
       role: "assistant",
-      content: `At **Rooz Textile's Sartorial Atelier**, we weave and tailor executive blazers for corporate leadership, luxury retail labels, and bespoke suiting:
+      content: `At **RoozTextile's Sartorial Atelier**, we weave and tailor executive blazers for corporate leadership, luxury retail labels, and bespoke suiting:
 
 • **Super 130s Australian Merino Worsted Blazer (270 GSM):** Pure high-twist wool with natural crease-recovery, floating half-canvas horsehair interfacing, pick-stitched lapels, and genuine horn buttons. (MOQ: 20 pcs)
 • **Heritage Italian Herringbone Blazer (290 GSM):** Fine worsted wool blended with 15% Mulberry silk, featuring soft Neapolitan unconstructed shoulders and Bemberg lining. (MOQ: 25 pcs)
@@ -112,7 +112,7 @@ Available for executive wardrobes, corporate gifting, and luxury retail private 
     const schoolItems = productsData.filter((p) => p.division === "institutional");
     return {
       role: "assistant",
-      content: `**Rooz Textile** has equipped over 250+ prestigious schools, boarding academies, and convents since 1994:
+      content: `**RoozTextile** has equipped over 250+ prestigious schools, boarding academies, and convents since 1994:
 
 1. **Classic Poly-Wool School Blazer (280 GSM):** 65/35 Terene-Wool blend built with structured horsehair canvas, double-needle armholes, and anti-pilling finish tested to 30,000 rubs.
 2. **Heavyweight Crested Notch Blazer (310 GSM):** Boarding school edition with hand-embroidered bullion wire crests.
@@ -204,7 +204,7 @@ Dispatched via express courier within 48 to 72 hours across India and overseas.`
   // Default fallback
   return {
     role: "assistant",
-    content: `Welcome to **Rooz Textile**—distinguished manufacturer of fine worsted suiting, executive attire, and institutional school uniforms since 1994.
+    content: `Welcome to **RoozTextile**—distinguished manufacturer of fine worsted suiting, executive attire, and institutional school uniforms since 1994.
 
 Whether you require **Super 130s Merino Wool Blazers** and **2-Ply Egyptian Giza Cotton Shirts** for executive leadership, or Raymond-grade **Poly-Wool Blazers** for your academy, our master weavers are at your service.
 

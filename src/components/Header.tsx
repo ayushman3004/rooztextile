@@ -137,7 +137,7 @@ export default function Header() {
           {/* Center: Delicate Editorial Logo (inspired by 'bhat & rao') */}
           <Link href="/" className="flex flex-col items-center group py-1">
             <span className="font-serif-brand text-2xl sm:text-3xl tracking-tight text-[#11161F] group-hover:text-[#6F8FA8] transition-colors">
-              rooz textile
+              RoozTextile
             </span>
             <span className="text-[9px] uppercase tracking-[0.25em] text-[#7392A8] font-medium -mt-0.5">
               Est. 1994
@@ -165,7 +165,7 @@ export default function Header() {
               Contact
             </Link>
             <WhatsAppButton
-              message="Hello Rooz Textile Concierge, I would like to inquire regarding school uniform supply."
+              message="Hello RoozTextile Concierge, I would like to inquire regarding school uniform supply."
               label="Inquire"
               size="sm"
               variant="secondary"
@@ -177,7 +177,7 @@ export default function Header() {
           {/* Mobile menu button */}
           <div className="flex md:hidden items-center gap-3">
             <WhatsAppButton
-              message="Hello Rooz Textile, I would like to discuss school uniforms."
+              message="Hello RoozTextile, I would like to discuss school uniforms."
               label="WhatsApp"
               size="sm"
               variant="secondary"
@@ -264,7 +264,7 @@ export default function Header() {
           </Link>
           <div className="pt-2">
             <WhatsAppButton
-              message="Hello Rooz Textile Concierge, I would like to inquire regarding wholesale manufacturing."
+              message="Hello RoozTextile Concierge, I would like to inquire regarding wholesale manufacturing."
               label="WhatsApp Concierge"
               variant="secondary"
               pulse={true}

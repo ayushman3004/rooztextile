@@ -11,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-12 border-b border-[#263345]">
           <div className="space-y-1">
             <span className="font-serif-brand text-3xl sm:text-4xl text-white tracking-tight">
-              rooz textile
+              RoozTextile
             </span>
             <p className="text-xs text-neutral-400 font-light max-w-md">
               Premier institutional manufacturer of Raymond-grade poly-wool blazers, crisp Oxford shirts, permanent pleated skirts, and academy uniforms since 1994.
@@ -20,7 +20,7 @@ export default function Footer() {
 
           <div className="flex flex-wrap items-center gap-3">
             <a
-              href={getWhatsAppUrl("Hello Rooz Textile, I would like to inquire about school uniform supply and sample swatches.")}
+              href={getWhatsAppUrl("Hello RoozTextile, I would like to inquire about school uniform supply and sample swatches.")}
               target="_blank"
               rel="noopener noreferrer"
               className="relative inline-flex items-center justify-center gap-2.5 px-6 py-2.5 rounded-full bg-[#25D366] text-white hover:bg-[#1EBE5D] text-xs uppercase tracking-wider font-bold transition shadow-lg animate-wp-pulse select-none"
@@ -160,7 +160,7 @@ export default function Footer() {
         {/* Bottom Strip */}
         <div className="pt-8 border-t border-[#263345] flex flex-col sm:flex-row items-center justify-between text-[11px] text-neutral-400 font-light gap-4">
           <div>
-            &copy; {new Date().getFullYear()} Rooz Textile Mills. All rights reserved.
+            &copy; {new Date().getFullYear()} RoozTextile Mills. All rights reserved.
           </div>
           <div className="flex gap-6">
             <span>Woolmark Certified Fabrics</span>

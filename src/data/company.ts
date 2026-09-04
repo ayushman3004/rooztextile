@@ -29,7 +29,7 @@ export interface CompanyInfo {
 }
 
 export const companyData: CompanyInfo = {
-  name: "Rooz Textile",
+  name: "RoozTextile",
   tagline: "Fine Worsted Suiting, Executive Attire & Institutional Uniforms Since 1994",
   established: 1994,
   yearsOfHeritage: 30,

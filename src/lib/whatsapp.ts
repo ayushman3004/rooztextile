@@ -28,9 +28,9 @@ export function getProductInquiryUrl(product: {
   division?: string;
 }): string {
   const isExec = product.division === "executive";
-  const text = `*${isExec ? "Executive Suiting & Wholesale Inquiry" : "Institutional Wholesale Inquiry"} — Rooz Textile*
+  const text = `*${isExec ? "Executive Suiting & Wholesale Inquiry" : "Institutional Wholesale Inquiry"} — RoozTextile*
 
-Hello Rooz Textile Concierge,
+Hello RoozTextile Concierge,
 I am inquiring regarding wholesale manufacturing / bulk orders for:
 • *Garment:* ${product.name}
 • *Collection:* ${product.categoryLabel}
@@ -65,7 +65,7 @@ export function getSampleKitUrl(params?: {
 
   const articles = params?.articles?.length ? params.articles.join(", ") : "Blazers, Shirts & Fabric Swatches";
 
-  const text = `*Luxury Swatch Box & Sample Request — Rooz Textile*
+  const text = `*Luxury Swatch Box & Sample Request — RoozTextile*
 
 Dear Concierge Desk,
 We would like to request an official Fabric Swatch Presentation Kit for our evaluation:
@@ -92,7 +92,7 @@ export function getCustomQuoteUrl(data: {
   quantityRange: string;
   requirements?: string;
 }): string {
-  const text = `*B2B Custom Quotation Request — Rooz Textile*
+  const text = `*B2B Custom Quotation Request — RoozTextile*
 
 *Organization / Firm:* ${data.clientName}
 *Contact Person:* ${data.contactName}
@@ -110,7 +110,7 @@ Kindly share formal wholesale price sheet with FOB/Doorstep delivery terms.`;
  * WhatsApp escalation from AI assistant
  */
 export function getAIEscalationUrl(userQuery: string, aiSummary?: string): string {
-  const text = `*Client Inquiry Escalation — Rooz Textile Concierge*
+  const text = `*Client Inquiry Escalation — RoozTextile Concierge*
 
 Hello Sales Team,
 I was exploring your suiting and apparel collection on the website and have a specific inquiry:

@@ -25,7 +25,7 @@ export default function BulkOrdersPage() {
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center py-20 space-y-4">
           <span className="font-serif-brand text-2xl sm:text-3xl tracking-tight text-white/90 font-normal">
-            rooz textile wholesale
+            RoozTextile Wholesale
           </span>
           <h1 className="font-display-bold text-4xl sm:text-6xl md:text-7xl tracking-tight text-white leading-none drop-shadow-md">
             WHOLESALE, MOQS & BESPOKE TIERS
@@ -82,7 +82,7 @@ export default function BulkOrdersPage() {
               </div>
 
               <a
-                href={getWhatsAppUrl("Hello Rooz Textile, I am inquiring regarding Tier 1 Executive MOQ (20-50 units).")}
+                href={getWhatsAppUrl("Hello RoozTextile, I am inquiring regarding Tier 1 Executive MOQ (20-50 units).")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3.5 bg-[#11161F] text-white hover:bg-[#6F8FA8] text-xs uppercase tracking-wider font-semibold rounded-full transition text-center block"
@@ -124,7 +124,7 @@ export default function BulkOrdersPage() {
               </div>
 
               <a
-                href={getWhatsAppUrl("Hello Rooz Textile, We would like to request quotation for Tier 2 volume (50-500 units).")}
+                href={getWhatsAppUrl("Hello RoozTextile, We would like to request quotation for Tier 2 volume (50-500 units).")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3.5 bg-white text-[#11161F] hover:bg-[#FAF7F0] text-xs uppercase tracking-wider font-bold rounded-full transition text-center block shadow-md"
@@ -166,7 +166,7 @@ export default function BulkOrdersPage() {
               </div>
 
               <a
-                href={getWhatsAppUrl("Hello Rooz Textile, We require a formal enterprise tender quote for 500+ units.")}
+                href={getWhatsAppUrl("Hello RoozTextile, We require a formal enterprise tender quote for 500+ units.")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-3.5 bg-[#11161F] text-white hover:bg-[#6F8FA8] text-xs uppercase tracking-wider font-semibold rounded-full transition text-center block"
@@ -190,7 +190,7 @@ export default function BulkOrdersPage() {
                 Complimentary Sizing Rack Loaner Program
               </h2>
               <p className="text-sm sm:text-base text-neutral-600 font-light leading-relaxed">
-                Eliminate sizing mismatches. When you partner with Rooz Textile, we courier a complete trial rack of finished blazers and shirts (Chest sizes 36 to 46 for executive, 22 to 44 for academies) directly to your administrative office.
+                Eliminate sizing mismatches. When you partner with RoozTextile, we courier a complete trial rack of finished blazers and shirts (Chest sizes 36 to 46 for executive, 22 to 44 for academies) directly to your administrative office.
               </p>
 
               <div className="pt-2 flex flex-wrap gap-3">
