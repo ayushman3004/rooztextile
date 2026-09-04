@@ -12,13 +12,41 @@ export default function Header() {
     <header className="sticky top-0 z-40 w-full bg-[#FDFBF7]/90 backdrop-blur-md border-b border-[#E5DDD0] transition-all duration-200">
       {/* Top Infinite Marquee Announcement Bar */}
       <div className="bg-[#11161F] text-[#E2EAF0] text-[10px] sm:text-[11px] py-2 overflow-hidden border-b border-neutral-800/80 relative marquee-container cursor-default select-none">
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+              @keyframes marqueeContinuous {
+                0% { transform: translate3d(0, 0, 0); -webkit-transform: translate3d(0, 0, 0); }
+                100% { transform: translate3d(-100%, 0, 0); -webkit-transform: translate3d(-100%, 0, 0); }
+              }
+              @-webkit-keyframes marqueeContinuous {
+                0% { -webkit-transform: translate3d(0, 0, 0); }
+                100% { -webkit-transform: translate3d(-100%, 0, 0); }
+              }
+              .marquee-track {
+                display: flex !important;
+                flex-shrink: 0 !important;
+                min-width: 100%;
+                animation: marqueeContinuous 30s linear infinite !important;
+                -webkit-animation: marqueeContinuous 30s linear infinite !important;
+                will-change: transform;
+              }
+              @media (hover: hover) and (pointer: fine) {
+                .marquee-container:hover .marquee-track {
+                  animation-play-state: paused !important;
+                  -webkit-animation-play-state: paused !important;
+                }
+              }
+            `,
+          }}
+        />
         {/* Left & Right subtle edge fade gradients */}
         <div className="pointer-events-none absolute inset-y-0 left-0 w-8 sm:w-16 bg-gradient-to-r from-[#11161F] to-transparent z-10" />
         <div className="pointer-events-none absolute inset-y-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-[#11161F] to-transparent z-10" />
 
-        <div className="flex w-max">
+        <div className="flex flex-nowrap w-max">
           {/* Primary Track */}
-          <div className="animate-marquee flex items-center shrink-0">
+          <div className="marquee-track animate-marquee flex items-center shrink-0">
             {[
               { text: "PREMIER SCHOOL UNIFORM MANUFACTURER & INSTITUTIONAL WEAVING MILLS", highlight: false },
               { text: "WHOLESALE ACADEMY CATALOG & BESPOKE CRESTED ORDERS AVAILABLE WORLDWIDE", highlight: true },
@@ -50,7 +78,7 @@ export default function Header() {
           </div>
 
           {/* Duplicate Track for Seamless Infinite Scrolling */}
-          <div className="animate-marquee flex items-center shrink-0" aria-hidden="true">
+          <div className="marquee-track animate-marquee flex items-center shrink-0" aria-hidden="true">
             {[
               { text: "PREMIER SCHOOL UNIFORM MANUFACTURER & INSTITUTIONAL WEAVING MILLS", highlight: false },
               { text: "WHOLESALE ACADEMY CATALOG & BESPOKE CRESTED ORDERS AVAILABLE WORLDWIDE", highlight: true },
