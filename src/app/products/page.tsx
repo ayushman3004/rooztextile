@@ -25,22 +25,18 @@ function ProductsContent() {
   }, [categoryParam]);
 
   const filtered = productsData.filter((p) => {
-    let matchesCategory = true;
-    if (activeCategory === "school-blazers" || activeCategory === "blazers" || activeCategory === "executive-blazers") {
-      matchesCategory = p.category === "blazers";
-    } else if (activeCategory === "school-shirts" || activeCategory === "shirts" || activeCategory === "luxury-shirts") {
-      matchesCategory = p.category === "shirts";
-    } else if (activeCategory === "school-skirts" || activeCategory === "skirts" || activeCategory === "school-uniforms") {
-      matchesCategory = p.category === "skirts";
-    } else if (activeCategory === "school-knitwear" || activeCategory === "knitwear") {
-      matchesCategory = p.id.includes("knit") || p.id.includes("cardigan");
-    } else if (activeCategory === "accessories" || activeCategory === "ties") {
-      matchesCategory = p.category === "accessories";
-    }
+    const matchesCategory =
+      activeCategory === "all" ||
+      p.category === activeCategory ||
+      (activeCategory === "blazers" && p.category === "blazers") ||
+      (activeCategory === "school-blazers" && p.category === "blazers") ||
+      (activeCategory === "school-shirts" && p.category === "uniform-sets") ||
+      (activeCategory === "school-skirts" && p.category === "uniform-sets");
 
     const matchesSearch =
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.fabric.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.description.toLowerCase().includes(searchQuery.toLowerCase());
 
     return matchesCategory && matchesSearch;
@@ -74,6 +70,35 @@ function ProductsContent() {
         </div>
       </section>
 
+      {/* 2026 OFFICIAL CATALOGUE CALLOUT BANNER */}
+      {/* <section className="bg-[#182333] text-white py-4 px-4 border-b border-[#2C3B4E]">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-3 text-center sm:text-left">
+            <span className="inline-flex items-center px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest bg-[#C5A265] text-[#11161F]">
+              2026 Collection
+            </span>
+            <p className="text-xs sm:text-sm text-neutral-200 font-light">
+              Official Institutional School Uniforms & Complete Solutions Catalogue is available.
+            </p>
+          </div>
+          <div className="flex items-center gap-3 shrink-0">
+            <a
+              href="/catalogue"
+              className="px-4 py-2 bg-white text-[#11161F] hover:bg-[#FAF7F0] rounded-full text-xs font-semibold tracking-wide uppercase transition shadow-sm"
+            >
+              View Flipbook Catalogue →
+            </a>
+            <a
+              href="/catalogues/rooztextile-school-uniform-catalogue.pdf"
+              download="rooztextile-school-uniform-catalogue.pdf"
+              className="px-4 py-2 border border-white/40 hover:border-white text-white rounded-full text-xs font-semibold tracking-wide uppercase transition"
+            >
+              Download PDF ↓
+            </a>
+          </div>
+        </div>
+      </section> */}
+
       {/* 2. SLATE BLUE FILTER BAR & ROUNDED SEARCH */}
       <section className="bg-[#6F8FA8] text-white py-6 border-b border-[#82A0B8]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4">
@@ -83,11 +108,10 @@ function ProductsContent() {
               <button
                 key={cat.id}
                 onClick={() => setActiveCategory(cat.id)}
-                className={`px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-full transition cursor-pointer ${
-                  activeCategory === cat.id
+                className={`px-4 py-2 text-xs uppercase tracking-wider font-semibold rounded-full transition cursor-pointer ${activeCategory === cat.id
                     ? "bg-white text-[#11161F] shadow-sm"
                     : "bg-[#56758D] text-white/90 hover:bg-[#4E6B82]"
-                }`}
+                  }`}
               >
                 {cat.label}
               </button>

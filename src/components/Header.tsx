@@ -65,9 +65,8 @@ export default function Header() {
                   </a>
                 ) : (
                   <span
-                    className={`tracking-widest uppercase ${
-                      item.highlight ? "text-white font-medium" : "text-neutral-400 font-light"
-                    }`}
+                    className={`tracking-widest uppercase ${item.highlight ? "text-white font-medium" : "text-neutral-400 font-light"
+                      }`}
                   >
                     {item.text}
                   </span>
@@ -98,9 +97,8 @@ export default function Header() {
                   </a>
                 ) : (
                   <span
-                    className={`tracking-widest uppercase ${
-                      item.highlight ? "text-white font-medium" : "text-neutral-400 font-light"
-                    }`}
+                    className={`tracking-widest uppercase ${item.highlight ? "text-white font-medium" : "text-neutral-400 font-light"
+                      }`}
                   >
                     {item.text}
                   </span>
@@ -116,21 +114,28 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           {/* Left: Navigation links */}
-          <nav className="hidden md:flex items-center gap-6 text-xs uppercase tracking-widest font-medium text-[#11161F]">
-            <Link href="/" className="hover:text-[#6F8FA8] transition">
-              Home
+          <nav className="hidden md:flex items-center gap-5 text-xs uppercase tracking-widest font-medium text-[#11161F]">
+            {/* <Link
+              href="/catalogue"
+              className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#11161F] text-white hover:bg-[#C5A265] hover:text-[#11161F] rounded-full transition font-semibold"
+            >
+              <span>Catalogue</span>
+              <span className="text-[9px] bg-[#C5A265] text-[#11161F] px-1.5 py-0.2 rounded-full font-bold">2026</span>
+            </Link> */}
+            <Link href="/products?category=uniform-sets" className="hover:text-[#6F8FA8] transition">
+              Assembly Sets
             </Link>
-            <Link href="/products?category=school-blazers" className="hover:text-[#6F8FA8] transition">
+            <Link href="/products?category=house-polos" className="hover:text-[#6F8FA8] transition">
+              House Polos
+            </Link>
+            <Link href="/products?category=tracksuits" className="hover:text-[#6F8FA8] transition">
+              Tracksuits
+            </Link>
+            <Link href="/products?category=blazers" className="hover:text-[#6F8FA8] transition">
               Blazers
             </Link>
-            <Link href="/products?category=school-shirts" className="hover:text-[#6F8FA8] transition">
-              Shirts
-            </Link>
-            <Link href="/products?category=school-skirts" className="hover:text-[#6F8FA8] transition">
-              Skirts & Pinafores
-            </Link>
-            <Link href="/bulk-orders" className="hover:text-[#6F8FA8] transition">
-              Bulk Supply
+            <Link href="/products?category=accessories" className="hover:text-[#6F8FA8] transition">
+              Accessories
             </Link>
           </nav>
 
@@ -147,10 +152,10 @@ export default function Header() {
           {/* Right: Actions */}
           <div className="hidden md:flex items-center gap-4">
             <Link
-              href="/products"
+              href="/bulk-orders"
               className="text-xs uppercase tracking-widest font-medium text-[#11161F] hover:text-[#6F8FA8] transition"
             >
-              Uniforms
+              Bulk Supply
             </Link>
             <Link
               href="/about"
@@ -207,32 +212,61 @@ export default function Header() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-[#E5DDD0] bg-[#FDFBF7] px-6 pt-4 pb-8 space-y-4 shadow-xl">
           <Link
-            href="/"
+            href="/catalogue"
             onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
+            className="flex items-center justify-between text-sm uppercase tracking-widest font-bold text-[#11161F] bg-[#FAF7F0] p-3 rounded-xl border border-[#D5C9B5]"
           >
-            Home
+            <span>2026 Digital Catalogue</span>
+            <span className="text-[10px] bg-[#C5A265] text-[#11161F] px-2 py-0.5 rounded-full font-bold">9 Pages</span>
           </Link>
           <Link
-            href="/products?category=school-blazers"
+            href="/products?category=uniform-sets"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
           >
-            School Blazers
+            Assembly Uniform Sets
           </Link>
           <Link
-            href="/products?category=school-shirts"
+            href="/products?category=house-polos"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
           >
-            Uniform Shirts & Blouses
+            House & PT Polos
           </Link>
           <Link
-            href="/products?category=school-skirts"
+            href="/products?category=tracksuits"
             onClick={() => setMobileMenuOpen(false)}
             className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
           >
-            Pleated Skirts & Pinafores
+            Tracksuits & Track Pants
+          </Link>
+          <Link
+            href="/products?category=blazers"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
+          >
+            Formal School Blazers
+          </Link>
+          <Link
+            href="/products?category=knitwear"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
+          >
+            Sweaters & Cardigans
+          </Link>
+          <Link
+            href="/products?category=accessories"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
+          >
+            Accessories Suite (Ties, Belts, Socks)
+          </Link>
+          <Link
+            href="/products"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
+          >
+            All Catalogue Products
           </Link>
           <Link
             href="/bulk-orders"
@@ -240,13 +274,6 @@ export default function Header() {
             className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
           >
             Bulk School Supply
-          </Link>
-          <Link
-            href="/products"
-            onClick={() => setMobileMenuOpen(false)}
-            className="block text-sm uppercase tracking-widest font-medium text-[#11161F]"
-          >
-            Complete Uniforms
           </Link>
           <Link
             href="/about"

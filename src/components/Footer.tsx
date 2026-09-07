@@ -48,32 +48,48 @@ export default function Footer() {
           {/* Column 1: Collections */}
           <div className="space-y-3">
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8BA8BF] block">
-              SCHOOL UNIFORMS
+              2026 CATALOGUE & UNIFORMS
             </span>
             <ul className="space-y-2 font-light text-neutral-300">
               <li>
-                <Link href="/products?category=school-blazers" className="hover:text-white transition">
-                  Poly-Wool School Blazers
+                <Link href="/catalogue" className="text-[#C5A265] hover:text-white transition font-medium flex items-center gap-1.5">
+                  <span>✦</span>
+                  <span>2026 Digital Catalogue (9 Pages)</span>
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=school-shirts" className="hover:text-white transition">
-                  Pinpoint Oxford Shirts
+                <a
+                  href="/catalogues/rooztextile-school-uniform-catalogue.pdf"
+                  download="rooztextile-school-uniform-catalogue.pdf"
+                  className="hover:text-white transition flex items-center gap-1.5"
+                >
+                  <span>↓</span>
+                  <span>Download Print PDF Catalogue</span>
+                </a>
+              </li>
+              <li>
+                <Link href="/products?category=uniform-sets" className="hover:text-white transition">
+                  Assembly Uniform Sets
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=school-skirts" className="hover:text-white transition">
-                  Permanent Pleated Skirts
+                <Link href="/products?category=house-polos" className="hover:text-white transition">
+                  House & PT Sports Polos
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=school-skirts" className="hover:text-white transition">
-                  Tartan Pinafores & Tunics
+                <Link href="/products?category=tracksuits" className="hover:text-white transition">
+                  Athletic Tracksuits & Pants
+                </Link>
+              </li>
+              <li>
+                <Link href="/products?category=blazers" className="hover:text-white transition">
+                  Worsted Poly-Wool Blazers
                 </Link>
               </li>
               <li>
                 <Link href="/products?category=accessories" className="hover:text-white transition">
-                  Custom Woven Jacquard Ties
+                  Crested Ties, Belts & Socks
                 </Link>
               </li>
             </ul>

@@ -13,10 +13,11 @@ export default function HomePage() {
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [isQuoteModalOpen, setIsQuoteModalOpen] = useState(false);
 
-  const blazersProduct = productsData.find((p) => p.id === "blazer-polywool-classic") || productsData[0];
-  const shirtsProduct = productsData.find((p) => p.id === "boys-uniform-full-set") || productsData[0];
-  const skirtsProduct = productsData.find((p) => p.id === "skirt-knife-pleat") || productsData[6];
-  const academyBlazer = productsData.find((p) => p.id === "blazer-crested-notch") || productsData[4];
+  const assemblyProduct = productsData.find((p) => p.id === "boys-assembly-uniform-set") || productsData[0];
+  const girlsProduct = productsData.find((p) => p.id === "girls-assembly-uniform-set") || productsData[1];
+  const housePoloProduct = productsData.find((p) => p.id === "house-colour-sports-polo") || productsData[3];
+  const tracksuitProduct = productsData.find((p) => p.id === "school-tracksuit-jacket-set") || productsData[4];
+  const blazerProduct = productsData.find((p) => p.id === "school-formal-blazer-uniform") || productsData[6];
 
   return (
     <main className="w-full bg-[#FDFBF7] text-[#11161F]">
@@ -49,55 +50,125 @@ export default function HomePage() {
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg text-neutral-200 max-w-xl mx-auto font-light leading-relaxed drop-shadow-sm pt-1">
-            Premium school blazers, crisp uniform shirts, knife-pleated skirts, and institutional academy apparel since 1994.
+            Official institutional school uniform solutions, worsted poly-wool blazers, 4-house sports polos, and crest regalia since 1994.
           </p>
 
           {/* White Pill Button: Shop New Arrivals / Explore Collections (Image 1 style) */}
           <div className="pt-3 flex flex-col sm:flex-row items-center gap-3.5">
+            {/* <Link
+              href="/catalogue"
+              className="inline-flex items-center justify-center px-8 py-3.5 bg-[#C5A265] text-[#11161F] hover:bg-[#B39054] text-xs sm:text-sm font-bold tracking-wide rounded-full shadow-lg transition transform hover:-translate-y-0.5 active:translate-y-0"
+            >
+              Explore 2026 Catalogue →
+            </Link> */}
+
             <Link
               href="/products"
               className="inline-flex items-center justify-center px-8 py-3.5 bg-white text-[#11161F] hover:bg-[#FAF7F0] text-xs sm:text-sm font-medium tracking-wide rounded-full shadow-lg transition transform hover:-translate-y-0.5 active:translate-y-0"
             >
-              Shop New Arrivals
+              Shop Uniforms
             </Link>
 
             <button
               onClick={() => setIsQuoteModalOpen(true)}
               className="inline-flex items-center justify-center px-8 py-3.5 bg-black/40 hover:bg-black/60 text-white border border-white/40 hover:border-white text-xs sm:text-sm font-medium tracking-wide rounded-full backdrop-blur-xs transition"
             >
-              Wholesale & School Orders
+              Wholesale Orders
             </button>
           </div>
         </div>
       </section>
 
       {/* ========================================================================= */}
-      {/* 2. DUSTY SLATE BLUE ROUNDED CATEGORIES SHOWCASE (Inspired by Image 2)    */}
+      {/* 2026 OFFICIAL CATALOGUE SPOTLIGHT                                         */}
       {/* ========================================================================= */}
-      <section className="py-20 sm:py-28 bg-[#6F8FA8] text-white">
+      {/* <section className="bg-[#11161F] text-white py-16 sm:py-24 border-b border-[#243242]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-[#182333] to-[#0D141F] rounded-[3rem] p-8 sm:p-14 border-2 border-[#C5A265]/40 shadow-2xl">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+             
+              <div className="lg:col-span-6 space-y-6">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#C5A265]/20 border border-[#C5A265]/40 text-[#E6CA85] text-[11px] uppercase tracking-widest font-semibold">
+                  <span>✦</span>
+                  <span>NEW 2026-27 COLLECTION</span>
+                  <span>✦</span>
+                </div>
+                <h2 className="font-editorial-heading text-3xl sm:text-5xl text-white font-normal leading-tight">
+                  Official Institutional School Uniform Catalogue
+                </h2>
+                <p className="text-sm sm:text-base text-neutral-300 font-light leading-relaxed">
+                  Browse all 9 high-resolution pages covering Assembly Oxford Sets, 4-House Sports Day Polos, Academy Tracksuits, Worsted Poly-Wool Blazers, 12GG V-Neck Sweaters, Accessories, and Custom Swatches.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-3.5 pt-2">
+                  <Link
+                    href="/catalogue"
+                    className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#C5A265] hover:bg-[#B39054] text-[#11161F] font-bold text-xs uppercase tracking-wider rounded-full shadow-lg transition transform hover:-translate-y-0.5"
+                  >
+                    <span>Browse Digital Flipbook (9 Pages) →</span>
+                  </Link>
+
+                  <a
+                    href="/catalogues/rooztextile-school-uniform-catalogue.pdf"
+                    download="rooztextile-school-uniform-catalogue.pdf"
+                    className="inline-flex items-center gap-2 px-6 py-3.5 bg-white/10 hover:bg-white/20 border border-white/30 text-white font-medium text-xs uppercase tracking-wider rounded-full transition"
+                  >
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                    </svg>
+                    <span>Download PDF (Print Ready)</span>
+                  </a>
+                </div>
+              </div>
+              <div className="lg:col-span-6 flex items-center justify-center">
+                <Link href="/catalogue" className="group relative block w-full max-w-sm">
+                  <div className="relative aspect-[2/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-[#C5A265]/50 group-hover:scale-[1.02] transition-transform duration-500">
+                    <Image
+                      src="/images/catalogue/page-1.png"
+                      alt="RoozTextile 2026 Institutional Catalogue Cover"
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center pb-6">
+                      <span className="px-5 py-2 bg-[#C5A265] text-[#11161F] text-xs uppercase tracking-wider font-bold rounded-full shadow-lg">
+                        Click to Open Catalogue →
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section> */}
+
+      {/* ========================================================================= */}
+      {/* 2. DUSTY SLATE BLUE ROUNDED CATEGORIES SHOWCASE                           */}
+      {/* ========================================================================= */}
+      {/* <section className="py-20 sm:py-28 bg-[#6F8FA8] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
-          {/* Section Header */}
+
           <div className="text-center space-y-2 max-w-xl mx-auto">
             <span className="text-[11px] uppercase tracking-[0.25em] text-white/80 font-medium">
-              Featured Collections
+              Featured Uniform Collections
             </span>
             <h2 className="font-editorial-heading text-3xl sm:text-4xl text-white font-normal">
               Tailored For Every Institution
             </h2>
           </div>
 
-          {/* 4 Large Rounded Category Cards (Image 2 style with large rounded corners and underlined titles) */}
+       
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10">
-            {/* Card 1: Dresses, Skirts & Pinafores */}
+
             <div
-              onClick={() => setSelectedProduct(skirtsProduct)}
+              onClick={() => setSelectedProduct(girlsProduct)}
               className="group relative aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden bg-[#56758D] cursor-pointer shadow-xl transition-transform duration-500 hover:-translate-y-1"
             >
               <Image
-                src="/images/skirts.jpg"
-                alt="Shop School Skirts & Pinafores"
+                src="/images/catalogue/page-2.png"
+                alt="Shop School Assembly Uniform Sets"
                 fill
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10 transition-opacity group-hover:opacity-85" />
 
@@ -106,24 +177,24 @@ export default function HomePage() {
                   SHOP
                 </span>
                 <h3 className="editorial-underline text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white">
-                  Skirts & Tunics
+                  Assembly Sets
                 </h3>
                 <p className="text-xs text-white/80 mt-4 max-w-xs font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Permanent knife-pleated skirts, academic pinafores & woven tunics
+                  Oxford shirts, permanent knife-pleated skirts & tailored trousers
                 </p>
               </div>
             </div>
 
-            {/* Card 2: Knitwear & Cardigans */}
+
             <div
-              onClick={() => setSelectedProduct(blazersProduct)}
+              onClick={() => setSelectedProduct(housePoloProduct)}
               className="group relative aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden bg-[#56758D] cursor-pointer shadow-xl transition-transform duration-500 hover:-translate-y-1"
             >
               <Image
-                src="/images/girls-uniform.jpg"
-                alt="Shop School Knitwear & Cardigans"
+                src="/images/catalogue/page-4.png"
+                alt="Shop 4-House Sports Day Polos"
                 fill
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/10 transition-opacity group-hover:opacity-85" />
 
@@ -132,24 +203,24 @@ export default function HomePage() {
                   SHOP
                 </span>
                 <h3 className="editorial-underline text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white">
-                  Knitwear
+                  House & PT Polos
                 </h3>
                 <p className="text-xs text-white/80 mt-4 max-w-xs font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  School uniform cardigans, v-neck pullovers & tactile winter layers
+                  4-House athletic jerseys (Red, Blue, Green, Yellow) with twin racing stripes
                 </p>
               </div>
             </div>
 
-            {/* Card 3: Crested Blazers */}
+
             <div
-              onClick={() => setSelectedProduct(academyBlazer)}
+              onClick={() => setSelectedProduct(blazerProduct)}
               className="group relative aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden bg-[#56758D] cursor-pointer shadow-xl transition-transform duration-500 hover:-translate-y-1"
             >
               <Image
-                src="/images/blazers.jpg"
-                alt="Shop School Blazers"
+                src="/images/catalogue/page-6.png"
+                alt="Shop Formal School Blazers"
                 fill
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105 filter brightness-95"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105 filter brightness-95"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/15 transition-opacity group-hover:opacity-85" />
 
@@ -158,24 +229,24 @@ export default function HomePage() {
                   SHOP
                 </span>
                 <h3 className="editorial-underline text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white">
-                  Blazers
+                  School Blazers
                 </h3>
                 <p className="text-xs text-white/80 mt-4 max-w-xs font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Single-breasted worsted poly-wool & school crested blazers
+                  Single-breasted worsted poly-wool & crested institutional blazers
                 </p>
               </div>
             </div>
 
-            {/* Card 4: Uniform Shirts & Ties */}
+           
             <div
-              onClick={() => setSelectedProduct(shirtsProduct)}
+              onClick={() => setSelectedProduct(tracksuitProduct)}
               className="group relative aspect-[4/3] sm:aspect-[16/11] rounded-[2.5rem] overflow-hidden bg-[#56758D] cursor-pointer shadow-xl transition-transform duration-500 hover:-translate-y-1"
             >
               <Image
-                src="/images/boys-uniform.jpg"
-                alt="Shop School Shirts & Ties"
+                src="/images/catalogue/page-5.png"
+                alt="Shop School Tracksuits & Jackets"
                 fill
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-105 filter brightness-95"
+                className="object-cover object-top transition-transform duration-700 group-hover:scale-105 filter brightness-95"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/25 to-black/15 transition-opacity group-hover:opacity-85" />
 
@@ -184,16 +255,16 @@ export default function HomePage() {
                   SHOP
                 </span>
                 <h3 className="editorial-underline text-3xl sm:text-4xl md:text-5xl font-light tracking-tight text-white">
-                  Shirts & Ties
+                  Tracksuits & Pants
                 </h3>
                 <p className="text-xs text-white/80 mt-4 max-w-xs font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  Crisp pinpoint Oxford shirts, regimental ties & daily assembly sets
+                  Full-zip athletic jackets with brushed fleece & contrast track pants
                 </p>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* ========================================================================= */}
       {/* 3. SPLIT EDITORIAL LOCATION & BRAND SECTION (Inspired by Image 3)        */}

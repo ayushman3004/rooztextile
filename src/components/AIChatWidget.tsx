@@ -73,40 +73,48 @@ export default function AIChatWidget() {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 font-sans">
-      {/* Trigger Button */}
+      {/* Trigger Button - Sleek Circular Icon Button */}
       {!isOpen && (
-        <button
-          onClick={() => {
-            setIsOpen(true);
-            setHasInteracted(true);
-          }}
-          className="relative group flex items-center gap-3 bg-[#11161F] text-white border-2 border-[#6F8FA8] pl-4 pr-5 py-3.5 rounded-full shadow-2xl hover:bg-[#1E2633] transition-all duration-300 animate-fadeIn cursor-pointer"
-          aria-label="Open RoozTextile Suiting Concierge"
-        >
-          <div className="relative w-8 h-8 rounded-full bg-[#1C2430] border border-[#8BA8BF] p-1 flex items-center justify-center shrink-0">
-            <Image
-              src="/images/rooz-logo.png"
-              alt="Crest"
-              width={22}
-              height={22}
-              className="object-contain filter brightness-125"
-            />
-            <span className="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#8BA8BF] rounded-full ring-2 ring-[#11161F]" />
+        <div className="relative group flex items-center">
+          {/* Tooltip on Hover */}
+          <div className="absolute right-full mr-3 pointer-events-none whitespace-nowrap bg-[#11161F] text-white text-xs px-3 py-1.5 rounded-xl shadow-xl border border-white/10 font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1.5">
+            <span>AI Concierge</span>
+            <span className="text-[10px] text-[#8BA8BF]">• Ask Fabrics & Orders</span>
           </div>
-          <div className="text-left">
-            <span className="block text-[9px] uppercase font-bold tracking-widest text-[#8BA8BF]">
-              Suiting Concierge
+
+          <button
+            onClick={() => {
+              setIsOpen(true);
+              setHasInteracted(true);
+            }}
+            className="relative w-14 h-14 rounded-full bg-[#11161F] text-white border-2 border-[#C5A265]/60 hover:border-[#C5A265] shadow-2xl flex items-center justify-center hover:scale-105 active:scale-95 transition-all duration-200 cursor-pointer group"
+            aria-label="Open RoozTextile Suiting & Uniform Concierge"
+          >
+            {/* Subtle Outer Glow Ring */}
+            <span className="absolute -inset-1 rounded-full bg-[#C5A265]/20 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+
+            {/* Rooz Crest & Chat Icon */}
+            <div className="relative w-7 h-7 flex items-center justify-center">
+              <Image
+                src="/images/rooz-logo.png"
+                alt="Rooz Concierge"
+                width={26}
+                height={26}
+                className="object-contain filter brightness-125 group-hover:scale-110 transition-transform duration-200"
+              />
+            </div>
+
+            {/* Online Status Dot */}
+            <span className="absolute bottom-0 right-0 w-3.5 h-3.5 bg-[#11161F] rounded-full flex items-center justify-center p-0.5">
+              <span className="w-full h-full bg-emerald-400 rounded-full" />
             </span>
-            <span className="text-xs font-semibold text-white tracking-wide">
-              Ask Fabrics & MOQs
-            </span>
-          </div>
-          {!hasInteracted && (
-            <span className="absolute -top-2 -left-2 bg-[#7D1826] text-white text-[9px] font-bold px-2 py-0.5 rounded-full border border-white/40 shadow-xs">
-              Online
-            </span>
-          )}
-        </button>
+
+            {/* Unread / Online badge */}
+            {!hasInteracted && (
+              <span className="absolute -top-1 -right-1 w-3 h-3 bg-[#C5A265] rounded-full ring-2 ring-[#11161F] animate-pulse" />
+            )}
+          </button>
+        </div>
       )}
 
       {/* Slide-Up Chat Window */}
