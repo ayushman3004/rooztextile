@@ -13,6 +13,7 @@ function ProductsContent() {
   const searchParams = useSearchParams();
   const categoryParam = searchParams.get("category");
 
+  const [products, setProducts] = useState<Product[]>(productsData);
   const [activeCategory, setActiveCategory] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
@@ -24,14 +25,36 @@ function ProductsContent() {
     }
   }, [categoryParam]);
 
-  const filtered = productsData.filter((p) => {
+  // Fetch live products from MongoDB API
+  useEffect(() => {
+    let isMounted = true;
+    async function fetchLiveProducts() {
+      try {
+        const res = await fetch("/api/products");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.success && Array.isArray(data.products) && data.products.length > 0 && isMounted) {
+            setProducts(data.products);
+          }
+        }
+      } catch (err) {
+        console.error("Storefront could not fetch live products from MongoDB:", err);
+      }
+    }
+    fetchLiveProducts();
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
+  const filtered = products.filter((p) => {
     const matchesCategory =
       activeCategory === "all" ||
       p.category === activeCategory ||
       (activeCategory === "blazers" && p.category === "blazers") ||
       (activeCategory === "school-blazers" && p.category === "blazers") ||
-      (activeCategory === "school-shirts" && p.category === "uniform-sets") ||
-      (activeCategory === "school-skirts" && p.category === "uniform-sets");
+      (activeCategory === "school-shirts" && (p.category === "uniform-sets" || p.category === "shirts")) ||
+      (activeCategory === "school-skirts" && (p.category === "uniform-sets" || p.category === "skirts"));
 
     const matchesSearch =
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||

@@ -178,10 +178,14 @@ export default function Footer() {
           <div>
             &copy; {new Date().getFullYear()} RoozTextile Mills. All rights reserved.
           </div>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-4 sm:gap-6 flex-wrap">
             <span>Woolmark Certified Fabrics</span>
             <span>•</span>
             <span>OEKO-TEX Standard 100</span>
+            <span>•</span>
+            <Link href="/admin" className="hover:text-[#8BA8BF] transition font-medium">
+              Admin Portal
+            </Link>
           </div>
         </div>
       </div>
